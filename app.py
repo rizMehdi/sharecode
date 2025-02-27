@@ -15,7 +15,7 @@ def main():
         st.write("To create a sharecode, you will be asked a series of questions to check if you have the minimum eligibility for social-housing assistance.")
         st.write("There might be additional requirements based on where you live or where you want to apply for social housing.")
         
-        if st.button("?"):
+        if st.markdown("[?](#)"):
             styles = {'material-icons':{'color': 'black'},
                       'text-icon-link-close-container': {'box-shadow': '#3896de 0px 4px'},
                       'notification-text': {'':''},
