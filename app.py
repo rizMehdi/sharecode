@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_custom_notification_box import custom_notification_box
 
 def main():
     # Create a container to manage visibility of content
@@ -14,16 +13,6 @@ def main():
         st.subheader("For applicants")
         st.write("To create a sharecode, you will be asked a series of questions to check if you have the minimum eligibility for social-housing assistance.")
         st.write("There might be additional requirements based on where you live or where you want to apply for social housing.")
-        
-        # Add clickable text for the notification box
-        if st.button("?"):
-            styles = {'material-icons':{'color': 'black'},
-                      'text-icon-link-close-container': {'box-shadow': '#3896de 0px 4px'},
-                      'notification-text': {'':''},
-                      'close-button':{'':''},
-                      'link':{'':''}}
-            
-            custom_notification_box(icon='info', textDisplay='We are almost done with your registration...', externalLink='more info', url='#', styles=styles, key="foo")
     
     if st.button("Check eligibility and create sharecode"):
         # Clear the previous content
