@@ -13,6 +13,7 @@
       "settings": {},
       "extensions": [
         "ms-python.python",
+        "github.copilot",
         "ms-python.vscode-pylance"
       ]
     }

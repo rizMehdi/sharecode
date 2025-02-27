@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_custom_notification_box import custom_notification_box
 
 def main():
     # Create a container to manage visibility of content
@@ -7,6 +8,14 @@ def main():
     with content_container:
         st.title("IRESHA Sharecode")
         st.header("Immigration/Residence Status Eligibility for Social Housing Assistance - Sharecode")
+
+        styles = {'material-icons':{'color': 'red'},
+                  'text-icon-link-close-container': {'box-shadow': '#3896de 0px 4px'},
+                  'notification-text': {'':''},
+                  'close-button':{'':''},
+                  'link':{'':''}}
+        
+        custom_notification_box(icon='info', textDisplay='We are almost done with your registration...', externalLink='more info', url='#', styles=styles, key="foo")
 
         st.write("This webapp can be used to generate a sharecode indicating that you fulfil the minimum immigration/residence status eligibility requirements for social-housing assistance.")
         
@@ -28,7 +37,8 @@ def main():
         ])
         
         st.write(f"You selected: {option}")
-    
+        
+        
 if __name__ == "__main__":
     main()
-    
+
