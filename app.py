@@ -19,6 +19,10 @@ def main():
         ])
         
         st.write(f"You selected: {option}")
+        
+        if st.button("Back"):
+            st.session_state['button_clicked'] = False
+            st.rerun()
     else:
         with content_container:
             st.title("IRESHA Sharecode")
