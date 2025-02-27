@@ -1,6 +1,5 @@
 import streamlit as st
 
-
 def main():
     # Create a container to manage visibility of content
     content_container = st.container()
@@ -21,26 +20,17 @@ def main():
         st.write(f"You selected: {option}")
         
         if option == "British Citizen":
-            # Hide the previous radio options
-            st.session_state['british_citizen_selected'] = True
-            st.rerun()
+            location = st.radio("Where do you currently live?", [
+                "UK",
+                "Republic of Ireland",
+                "Isle of Man",
+                "Channel Islands",
+                "None of the Above"
+            ])
+            st.write(f"You selected: {location}")
         
         if st.button("Back"):
             st.session_state['button_clicked'] = False
-            st.rerun()
-    elif st.session_state.get('british_citizen_selected', False):
-        # Add the new radio options
-        location = st.radio("Where do you currently live?", [
-            "UK",
-            "Republic of Ireland",
-            "Isle of Man",
-            "Channel Islands",
-            "None of the Above"
-        ])
-        st.write(f"You selected: {location}")
-        
-        if st.button("Back"):
-            st.session_state['british_citizen_selected'] = False
             st.rerun()
     else:
         with content_container:
