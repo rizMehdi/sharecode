@@ -20,6 +20,16 @@ def main():
         
         st.write(f"You selected: {option}")
         
+        if option == "British Citizen":
+            location = st.radio("Where do you currently live?", [
+                "UK",
+                "Republic of Ireland",
+                "Isle of Man",
+                "Channel Islands",
+                "None of the Above"
+            ])
+            st.write(f"You selected: {location}")
+        
         if st.button("Back"):
             st.session_state['button_clicked'] = False
             st.rerun()
