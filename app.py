@@ -4,7 +4,7 @@ def main():
     # Create a container to manage visibility of content
     content_container = st.container()
     
-    if st.button("Check eligibility and create sharecode"):
+    if st.session_state.get('button_clicked', False):
         # Clear the previous content
         content_container.empty()
         
@@ -28,6 +28,10 @@ def main():
             st.subheader("For applicants")
             st.write("To create a sharecode, you will be asked a series of questions to check if you have the minimum eligibility for social-housing assistance.")
             st.write("There might be additional requirements based on where you live or where you want to apply for social housing.")
+            
+            if st.button("Check eligibility and create sharecode"):
+                st.session_state['button_clicked'] = True
+                st.experimental_rerun()
         
 if __name__ == "__main__":
     main()
