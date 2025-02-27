@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit import experimental_rerun
 
 def main():
     # Create a container to manage visibility of content
@@ -31,7 +32,7 @@ def main():
             
             if st.button("Check eligibility and create sharecode"):
                 st.session_state['button_clicked'] = True
-                st.experimental_rerun()
+                experimental_rerun()
         
 if __name__ == "__main__":
     main()
