@@ -39,9 +39,9 @@ def main():
                 st.write("This is the last question.")
                 acknowledge = survey.checkbox("Acknowledge")
         
-        if st.button("Back"):
-            st.session_state['button_clicked'] = False
-            st.rerun()
+        # if st.button("Back"):
+        #     st.session_state['button_clicked'] = False
+        #     st.rerun()
     else:
         with content_container:
             st.title("IRESHA Sharecode")
