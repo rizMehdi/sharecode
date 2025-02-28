@@ -15,8 +15,8 @@ def main():
 
         # Button customization
         pages.submit_button = pages.default_btn_submit("Generate Sharecode")
-        pages.prev_button = pages.default_btn_previous("Back")
-        pages.next_button = pages.default_btn_next("Next")
+        pages.prev_button = pages.default_btn_previous("Back", button_color="blue")
+        pages.next_button = pages.default_btn_next("Next", button_color="green")
 
         with pages:
             if pages.current == 0:
