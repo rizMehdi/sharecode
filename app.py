@@ -21,7 +21,7 @@ def main():
     content_container = st.container()
     
     # Set text size
-    text_size = "26px"
+    text_size = "16px"
     
     if st.session_state.get('button_clicked', False):
         # Clear the previous content
@@ -73,6 +73,9 @@ def main():
                 display: flex;
                 justify-content: space-between;
             }}
+            .stRadio > label {{
+                font-size: 18px;
+            }}
             </style>
             """, unsafe_allow_html=True)
 
@@ -109,7 +112,7 @@ def main():
     else:
         with content_container:
             st.title("IRESHA Sharecode")
-            st.header("Immigration/Residence Status Eligibility for Social Housing Assistance - Sharecode")
+            # st.header("Immigration/Residence Status Eligibility for Social Housing Assistance - Sharecode")
 
             st.write("This webapp can be used to generate a sharecode indicating that you fulfil the minimum immigration/residence status eligibility requirements for social-housing assistance.")
             
