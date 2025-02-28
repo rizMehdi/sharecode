@@ -42,10 +42,6 @@ def main():
             .stMarkdown {{
                 font-size: {text_size};
             }}
-            .button-container {{
-                display: flex;
-                justify-content: space-between;
-            }}
             </style>
             """, unsafe_allow_html=True)
 
@@ -94,12 +90,6 @@ def main():
                     label_visibility="collapsed",
                     horizontal=False,
                 )
-        
-        # Place buttons next to each other
-        st.markdown('<div class="button-container">', unsafe_allow_html=True)
-        pages.prev_button
-        pages.next_button
-        st.markdown('</div>', unsafe_allow_html=True)
         
         # if st.button("Back"):
         #     st.session_state['button_clicked'] = False
