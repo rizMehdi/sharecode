@@ -16,18 +16,19 @@ def ChangeButtonColour(button_key, font_color, background_color='transparent'):
         """
     components.html(f"{htmlstr}", height=0, width=0)
 
-
-# st.markdown("""
-#     <style>footer {visibility: hidden;}
-#     header {visibility: hidden;}</style>
-#     """, unsafe_allow_html=True)
-
+def whyQ(question_number):
+    if question_number == "Q2":
+        with st.expander("Why we are asking this question?"):
+            st.write('''
+This is to check if you are a habitual resident.
+'Habitual residence' means your main home is in the Common Travel Area and you do not have plans to live anywhere else.
+The Common Travel Area means the UK, Republic of Ireland, Channel Islands, or Isle of Man.
+Most people have to be habitually resident to apply for council housing. This applies to British and Irish citizens as well as other passport holders.
+For more information, please check the habitual residence test here: https://www.gov.uk/guidance/homelessness-code-of-guidance-for-local-authorities/annex-1-the-habitual-residence-test
+            ''')
 
 def main():
     # Create a container to manage visibility of content
-
-
-
     content_container = st.container()
     
     # Set text size
@@ -41,7 +42,6 @@ def main():
         survey = ss.StreamlitSurvey("IRESHA Sharecode")
 
         # Define questions
-        
         Q1 = ss.Radio(survey, "Are you any of the following?", options=[
             "British Citizen",
             "Irish Citizen",
@@ -102,19 +102,12 @@ def main():
                 st.session_state['current_page'] = 0
                 st.rerun()
             ChangeButtonColour('st-key-back_1', 'white', 'blue')
-            # st.write("q2 being shown")
             q2_value = Q2.display()
+            whyQ("Q2")
             if st.button("Next", key="next_1"):
                 st.session_state['current_page'] = 2
                 st.rerun()
-            with st.expander("Why we are asking this questions?"):
-                st.write('''
-This is to check if you are habitual resident.
-'Habitual residence' means your main home is in the Common Travel Area and you do not have plans to live anywhere else.
-The Common Travel Area means the UK, Republic of Ireland, Channel Islands, or Isle of Man.
-Most people have to be habitually resident to apply for council housing. This applies to British and Irish citizens as well as other passport holders.
-For more information, please check the habitual residence test here: https://www.gov.uk/guidance/homelessness-code-of-guidance-for-local-authorities/annex-1-the-habitual-residence-test
-                 ''')
+        
         elif st.session_state.get('current_page', 0) == 2:
             if st.button("Back", key="back_2"):
                 st.session_state['current_page'] = 1
