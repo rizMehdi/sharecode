@@ -26,6 +26,10 @@ The Common Travel Area means the UK, Republic of Ireland, Channel Islands, or Is
 Most people have to be habitually resident to apply for council housing. This applies to British and Irish citizens as well as other passport holders.
 For more information, please check the habitual residence test here: https://www.gov.uk/guidance/homelessness-code-of-guidance-for-local-authorities/annex-1-the-habitual-residence-test
             ''')
+    elif question_number == "Q1":  
+        with st.expander("Why we are asking this question?"):
+            st.write('''British, Irish citizens, Commonwealth citizens with right to abode, and diplomats are eligible for housing assistance if they are habitually resident in the UK.
+For further information, check the Homelessness code of guidance for local authorities here: https://www.gov.uk/guidance/homelessness-code-of-guidance-for-local-authorities/chapter-7-eligibility-for-assistance''')
 
 def main():
     # Create a container to manage visibility of content
