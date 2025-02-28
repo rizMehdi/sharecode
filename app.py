@@ -14,12 +14,51 @@ def main():
         
         # Initialize the survey
         survey = ss.StreamlitSurvey("IRESHA Sharecode")
-        pages = survey.pages(9, on_submit=lambda: st.json(survey.to_json()))
+        
+        # Define each question separately
+        q1 = survey.radio(
+            "used_st_before",
+            options=[
+                "British Citizen",
+                "Irish Citizen",
+                "Commonwealth Citizen (?)",
+                "Diplomat or their family member based in the UK",
+                "None of the above"
+            ],
+            index=0,
+            label_visibility="collapsed",
+            horizontal=False,
+        )
+        
+        q2 = survey.radio(
+            "current_location",
+            options=[
+                "UK",
+                "Republic of Ireland",
+                "Isle of Man",
+                "Channel Islands",
+                "None of the Above"
+            ],
+            index=0,
+            label_visibility="collapsed",
+            horizontal=False,
+        )
+        
+        q3 = survey.radio(
+            "residence_duration",
+            options=[
+                "Less than 2 years",
+                "2 years or more"
+            ],
+            index=0,
+            label_visibility="collapsed",
+            horizontal=False,
+        )
 
         # Button customization
-        pages.submit_button = pages.default_btn_submit("Generate Sharecode")
-        pages.prev_button = pages.default_btn_previous("Back")
-        pages.next_button = pages.default_btn_next("Next")
+        submit_button = survey.default_btn_submit("Generate Sharecode")
+        prev_button = survey.default_btn_previous("Back")
+        next_button = survey.default_btn_next("Next")
 
         # Apply custom styles to buttons and text
         st.markdown(f"""
@@ -42,58 +81,38 @@ def main():
             .stMarkdown {{
                 font-size: {text_size};
             }}
+            .button-container {{
+                display: flex;
+                justify-content: space-between;
+            }}
             </style>
             """, unsafe_allow_html=True)
 
-        with pages:
-            if pages.current == 0:
-                st.write("Are you any of the following?")
-                selected_page0 = survey.radio(
-                    "used_st_before",
-                    options=[
-                        "British Citizen",
-                        "Irish Citizen",
-                        "Commonwealth Citizen (?)",
-                        "Diplomat or their family member based in the UK",
-                        "None of the above"
-                    ],
-                    index=0,
-                    label_visibility="collapsed",
-                    horizontal=False,
-                )
-                    
-            if pages.current == 1:
-                # selected_page0 == "British Citizen":
-                location = survey.radio(
-                    "Where do you currently live?",
-                    options=[
-                        "UK",
-                        "Republic of Ireland",
-                        "Isle of Man",
-                        "Channel Islands",
-                        "None of the Above"
-                    ],
-                    index=0,
-                    label_visibility="collapsed",
-                    horizontal=False,
-                )
-
-            if pages.current == 2:
-                # selected_page0 == "British Citizen":
-                loc_duration = survey.radio(
-                    "Since how long have you been residing in your current place of residence?",
-                    options=[
-                        "Less than 2 years",
-                        "2 years or more"
-                    ],
-                    index=0,
-                    label_visibility="collapsed",
-                    horizontal=False,
-                )
+        # Display questions based on the current page
+        if st.session_state.get('current_page', 0) == 0:
+            st.write("Are you any of the following?")
+            q1.display()
+            if next_button:
+                st.session_state['current_page'] = 1
+                st.rerun()
         
-        # if st.button("Back"):
-        #     st.session_state['button_clicked'] = False
-        #     st.rerun()
+        elif st.session_state.get('current_page', 0) == 1:
+            q2.display()
+            if prev_button:
+                st.session_state['current_page'] = 0
+                st.rerun()
+            if next_button:
+                st.session_state['current_page'] = 2
+                st.rerun()
+        
+        elif st.session_state.get('current_page', 0) == 2:
+            q3.display()
+            if prev_button:
+                st.session_state['current_page'] = 1
+                st.rerun()
+            if submit_button:
+                st.json(survey.to_json())
+        
     else:
         with content_container:
             st.title("IRESHA Sharecode")
