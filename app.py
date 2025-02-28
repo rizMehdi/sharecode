@@ -32,10 +32,7 @@ def main():
             .stMarkdown {{
                 font-size: {text_size};
             }}
-            .button-container {{
-                display: flex;
-                justify-content: space-between;
-            }}
+
             </style>
             """, unsafe_allow_html=True)
 
