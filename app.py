@@ -26,8 +26,8 @@ def main():
                 color: white;
             }
             .stButton > button:disabled {
-                background-color: grey;
-                color: white;
+                background-color: white;
+                color: grey;
             }
             .stButton > div:nth-child(1) > button {
                 background-color: blue;
