@@ -104,6 +104,9 @@ def main():
             ChangeButtonColour('st-key-back_1', 'white', 'blue')
             # st.write("q2 being shown")
             q2_value = Q2.display()
+            if st.button("Next", key="next_1"):
+                st.session_state['current_page'] = 2
+                st.rerun()
             with st.expander("Why we are asking this questions?"):
                 st.write('''
 This is to check if you are habitual resident.
@@ -112,10 +115,6 @@ The Common Travel Area means the UK, Republic of Ireland, Channel Islands, or Is
 Most people have to be habitually resident to apply for council housing. This applies to British and Irish citizens as well as other passport holders.
 For more information, please check the habitual residence test here: https://www.gov.uk/guidance/homelessness-code-of-guidance-for-local-authorities/annex-1-the-habitual-residence-test
                  ''')
-            if st.button("Next", key="next_1"):
-                st.session_state['current_page'] = 2
-                st.rerun()
-        
         elif st.session_state.get('current_page', 0) == 2:
             if st.button("Back", key="back_2"):
                 st.session_state['current_page'] = 1
