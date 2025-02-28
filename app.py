@@ -22,8 +22,12 @@ def main():
                 background-color: white;
                 color: grey;
             }}
-            .stButton > div:nth-child(1) > button {{
+            .element-container:has(#button-back) + div button {{
                 background-color: blue;
+                color: white;
+            }}
+            .element-container:has(#button-next) + div button {{
+                background-color: green;
                 color: white;
             }}
             .stButton > button:hover {{
@@ -55,6 +59,7 @@ def main():
                 label_visibility="collapsed",
                 horizontal=False,
             )
+            st.markdown('<span id="button-next"></span>', unsafe_allow_html=True)
             if st.button("Next", key="next_0"):
                 st.session_state['current_page'] = 1
                 st.rerun()
@@ -73,7 +78,9 @@ def main():
                 label_visibility="collapsed",
                 horizontal=False,
             )
-            col1, col2 = st.columns(2)
+            st.markdown('<span id="button-back"></span>', unsafe_allow_html=True)
+            st.markdown('<span id="button-next"></span>', unsafe_allow_html=True)
+            col1, col2 = st.columns([1, 1])
             with col1:
                 if st.button("Back", key="back_1"):
                     st.session_state['current_page'] = 0
@@ -94,7 +101,9 @@ def main():
                 label_visibility="collapsed",
                 horizontal=False,
             )
-            col1, col2 = st.columns(2)
+            st.markdown('<span id="button-back"></span>', unsafe_allow_html=True)
+            st.markdown('<span id="button-next"></span>', unsafe_allow_html=True)
+            col1, col2 = st.columns([1, 1])
             with col1:
                 if st.button("Back", key="back_2"):
                     st.session_state['current_page'] = 1
