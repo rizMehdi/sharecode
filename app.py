@@ -10,34 +10,60 @@ def main():
         content_container.empty()
         
         # Initialize the survey
-        survey = ss.StreamlitSurvey("Survey Example 2 - Advanced Usage")
-        pages = survey.pages(2, on_submit=lambda: st.json(survey.to_json()))
+        survey = ss.StreamlitSurvey("IRESHA Sharecode")
+        pages = survey.pages(9, on_submit=lambda: st.json(survey.to_json()))
 
         # Button customization
-        # pages.submit_button = pages.default_btn_submit("Soumettre")
+        pages.submit_button = pages.default_btn_submit("Generate Sharecode")
         pages.prev_button = pages.default_btn_previous("Back")
         pages.next_button = pages.default_btn_next("Next")
 
         with pages:
-            if pages.current == 1:
+            if pages.current == 0:
                 st.write("Are you any of the following?")
-                Selected_page0= survey.radio(
+                selected_page0 = survey.radio(
                     "used_st_before",
                     options=[
                         "British Citizen",
                         "Irish Citizen",
                         "Commonwealth Citizen (?)",
                         "Diplomat or their family member based in the UK",
-                        "None of the above"],
+                        "None of the above"
+                    ],
+                    index=0,
+                    label_visibility="collapsed",
+                    horizontal=False,
+                )
+                    
+
+            if pages.current == 1:
+                # selected_page0 == "British Citizen":
+                location = survey.radio(
+                    "Where do you currently live?",
+                    options=[
+                        "UK",
+                        "Republic of Ireland",
+                        "Isle of Man",
+                        "Channel Islands",
+                        "None of the Above"
+                    ],
                     index=0,
                     label_visibility="collapsed",
                     horizontal=False,
                 )
 
-
-            if pages.current == 1:
-                st.write("This is the last question.")
-                acknowledge = survey.checkbox("Acknowledge")
+            if pages.current == 2:
+                # selected_page0 == "British Citizen":
+                loc_duration = survey.radio(
+                    "Since how long have you been residing in your current place of residence?",
+                    options=[
+                        "Less than 2 years",
+                        "2 years or more"
+                    ],
+                    index=0,
+                    label_visibility="collapsed",
+                    horizontal=False,
+                )
         
         # if st.button("Back"):
         #     st.session_state['button_clicked'] = False
