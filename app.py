@@ -14,20 +14,27 @@ def main():
         pages = survey.pages(2, on_submit=lambda: st.json(survey.to_json()))
 
         # Button customization
-        pages.submit_button = pages.default_btn_submit("Soumettre")
-        pages.prev_button = pages.default_btn_previous("Retour")
-        pages.next_button = pages.default_btn_next("Prochain")
+        # pages.submit_button = pages.default_btn_submit("Soumettre")
+        pages.prev_button = pages.default_btn_previous("Back")
+        pages.next_button = pages.default_btn_next("Next")
 
         with pages:
             if pages.current == 0:
-                st.write("Have you used Streamlit before?")
+                st.write("Are you any of the following?")
                 used_before = survey.radio(
                     "used_st_before",
-                    options=["NA", "Yes", "No"],
+                    options=[
+                        "British Citizen",
+                        "Irish Citizen",
+                        "Commonwealth Citizen (?)",
+                        "Diplomat or their family member based in the UK",
+                        "None of the above",
                     index=0,
                     label_visibility="collapsed",
-                    horizontal=True,
+                    horizontal=False,
                 )
+
+
             if pages.current == 1:
                 st.write("This is the last question.")
                 acknowledge = survey.checkbox("Acknowledge")
