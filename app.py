@@ -1,12 +1,12 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
-def ChangeButtonColour(widget_label, font_color, background_color='transparent'):
+def ChangeButtonColour(button_key, font_color, background_color='transparent'):
     htmlstr = f"""
         <script>
             var elements = window.parent.document.querySelectorAll('button');
             for (var i = 0; i < elements.length; ++i) {{ 
-                if (elements[i].innerText == '{widget_label}') {{ 
+                if (elements[i].getAttribute('data-testid') == '{button_key}') {{ 
                     elements[i].style.color ='{font_color}';
                     elements[i].style.background = '{background_color}'
                 }}
@@ -52,7 +52,6 @@ def main():
 
         # Display questions based on the current page
         if st.session_state.get('current_page', 0) == 0:
-            # ChangeButtonColour('Back', 'white', 'blue')
             st.write("Are you any of the following?")
             q1 = st.radio(
                 "used_st_before",
@@ -72,7 +71,6 @@ def main():
                 st.rerun()
         
         elif st.session_state.get('current_page', 0) == 1:
-            ChangeButtonColour('Back', 'white', 'blue')
             q2 = st.radio(
                 "current_location",
                 options=[
@@ -91,14 +89,13 @@ def main():
                 if st.button("Back", key="back_1"):
                     st.session_state['current_page'] = 0
                     st.rerun()
-                
+                ChangeButtonColour('back_1', 'white', 'blue')
             with col2:
                 if st.button("Next", key="next_1"):
                     st.session_state['current_page'] = 2
                     st.rerun()
         
         elif st.session_state.get('current_page', 0) == 2:
-            ChangeButtonColour('Back', 'white', 'blue')
             q3 = st.radio(
                 "residence_duration",
                 options=[
@@ -109,12 +106,12 @@ def main():
                 # label_visibility="collapsed",
                 horizontal=False,
             )
-            col1, col2, pad= st.columns([1, 1, 2])
+            col1, col2, pad = st.columns([1, 1, 2])
             with col1:
                 if st.button("Back", key="back_2"):
                     st.session_state['current_page'] = 1
                     st.rerun()
-                # ChangeButtonColour('Back', 'white', 'blue')
+                ChangeButtonColour('back_2', 'white', 'blue')
             with col2:
                 if st.button("Generate Sharecode", key="submit"):
                     st.json({
