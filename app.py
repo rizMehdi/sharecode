@@ -84,7 +84,7 @@ def main():
                 # label_visibility="collapsed",
                 horizontal=False,
             )
-            col1, col2 = st.columns([1, 2])
+            col1, col2 = st.columns([1, 1])
             with col1:
                 if st.button("Back", key="back_1"):
                     st.session_state['current_page'] = 0
@@ -106,7 +106,7 @@ def main():
                 # label_visibility="collapsed",
                 horizontal=False,
             )
-            col1, col2, pad = st.columns([1, 1, 2])
+            col1, col2 = st.columns([1, 1])
             with col1:
                 if st.button("Back", key="back_2"):
                     st.session_state['current_page'] = 1
