@@ -55,7 +55,7 @@ def main():
                 label_visibility="collapsed",
                 horizontal=False,
             )
-            if st.button("Next"):
+            if st.button("Next", key="next_0"):
                 st.session_state['current_page'] = 1
                 st.rerun()
         
@@ -75,11 +75,11 @@ def main():
             )
             col1, col2 = st.columns(2)
             with col1:
-                if st.button("Back"):
+                if st.button("Back", key="back_1"):
                     st.session_state['current_page'] = 0
                     st.rerun()
             with col2:
-                if st.button("Next"):
+                if st.button("Next", key="next_1"):
                     st.session_state['current_page'] = 2
                     st.rerun()
         
@@ -96,11 +96,11 @@ def main():
             )
             col1, col2 = st.columns(2)
             with col1:
-                if st.button("Back"):
+                if st.button("Back", key="back_2"):
                     st.session_state['current_page'] = 1
                     st.rerun()
             with col2:
-                if st.button("Generate Sharecode"):
+                if st.button("Generate Sharecode", key="submit"):
                     st.json({
                         "used_st_before": q1,
                         "current_location": q2,
