@@ -52,7 +52,7 @@ def main():
 
         # Display questions based on the current page
         if st.session_state.get('current_page', 0) == 0:
-            ChangeButtonColour('Back', 'white', 'blue')
+            # ChangeButtonColour('Back', 'white', 'blue')
             st.write("Are you any of the following?")
             q1 = st.radio(
                 "used_st_before",
