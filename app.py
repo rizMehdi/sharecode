@@ -21,14 +21,14 @@ def main():
         with pages:
             if pages.current == 0:
                 st.write("Are you any of the following?")
-                used_before = survey.radio(
+                Selected_page0= survey.radio(
                     "used_st_before",
                     options=[
                         "British Citizen",
                         "Irish Citizen",
                         "Commonwealth Citizen (?)",
                         "Diplomat or their family member based in the UK",
-                        "None of the above",
+                        "None of the above"],
                     index=0,
                     label_visibility="collapsed",
                     horizontal=False,
