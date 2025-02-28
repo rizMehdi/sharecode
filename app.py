@@ -16,16 +16,18 @@ def ChangeButtonColour(button_key, font_color, background_color='transparent'):
         """
     components.html(f"{htmlstr}", height=0, width=0)
 
-def main():
-    # Create a container to manage visibility of content
-
-    hide_st_style = """
+hide_st_style = """
     footer {visibility: hidden;}
     header {visibility: hidden;}
     """
-    st.markdown(hide_st_style, unsafe_allow_html=True)
+st.markdown(hide_st_style, unsafe_allow_html=True)
 
-    
+
+def main():
+    # Create a container to manage visibility of content
+
+
+
     content_container = st.container()
     
     # Set text size
