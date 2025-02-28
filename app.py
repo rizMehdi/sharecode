@@ -15,8 +15,26 @@ def main():
 
         # Button customization
         pages.submit_button = pages.default_btn_submit("Generate Sharecode")
-        pages.prev_button = pages.default_btn_previous("Back", button_color="blue")
-        pages.next_button = pages.default_btn_next("Next", button_color="green")
+        pages.prev_button = pages.default_btn_previous("Back")
+        pages.next_button = pages.default_btn_next("Next")
+
+        # Apply custom styles to buttons
+        st.markdown("""
+            <style>
+            .stButton > button {
+                background-color: green;
+                color: white;
+            }
+            .stButton > button:disabled {
+                background-color: grey;
+                color: white;
+            }
+            .stButton > button:nth-child(1) {
+                background-color: blue;
+                color: white;
+            }
+            </style>
+            """, unsafe_allow_html=True)
 
         with pages:
             if pages.current == 0:
