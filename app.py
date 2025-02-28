@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit_survey as ss
 
 def main():
     # Create a container to manage visibility of content
@@ -12,49 +11,6 @@ def main():
         # Clear the previous content
         content_container.empty()
         
-        # Initialize the survey
-        survey = ss.StreamlitSurvey("IRESHA Sharecode")
-        
-        # Define each question separately
-        q1 = survey.radio(
-            "used_st_before",
-            options=[
-                "British Citizen",
-                "Irish Citizen",
-                "Commonwealth Citizen (?)",
-                "Diplomat or their family member based in the UK",
-                "None of the above"
-            ],
-            index=0,
-            label_visibility="collapsed",
-            horizontal=False,
-        )
-        
-        q2 = survey.radio(
-            "current_location",
-            options=[
-                "UK",
-                "Republic of Ireland",
-                "Isle of Man",
-                "Channel Islands",
-                "None of the Above"
-            ],
-            index=0,
-            label_visibility="collapsed",
-            horizontal=False,
-        )
-        
-        q3 = survey.radio(
-            "residence_duration",
-            options=[
-                "Less than 2 years",
-                "2 years or more"
-            ],
-            index=0,
-            label_visibility="collapsed",
-            horizontal=False,
-        )
-
         # Apply custom styles to buttons and text
         st.markdown(f"""
             <style>
@@ -86,13 +42,37 @@ def main():
         # Display questions based on the current page
         if st.session_state.get('current_page', 0) == 0:
             st.write("Are you any of the following?")
-            q1.display()
+            q1 = st.radio(
+                "used_st_before",
+                options=[
+                    "British Citizen",
+                    "Irish Citizen",
+                    "Commonwealth Citizen (?)",
+                    "Diplomat or their family member based in the UK",
+                    "None of the above"
+                ],
+                index=0,
+                label_visibility="collapsed",
+                horizontal=False,
+            )
             if st.button("Next"):
                 st.session_state['current_page'] = 1
                 st.rerun()
         
         elif st.session_state.get('current_page', 0) == 1:
-            q2.display()
+            q2 = st.radio(
+                "current_location",
+                options=[
+                    "UK",
+                    "Republic of Ireland",
+                    "Isle of Man",
+                    "Channel Islands",
+                    "None of the Above"
+                ],
+                index=0,
+                label_visibility="collapsed",
+                horizontal=False,
+            )
             col1, col2 = st.columns(2)
             with col1:
                 if st.button("Back"):
@@ -104,7 +84,16 @@ def main():
                     st.rerun()
         
         elif st.session_state.get('current_page', 0) == 2:
-            q3.display()
+            q3 = st.radio(
+                "residence_duration",
+                options=[
+                    "Less than 2 years",
+                    "2 years or more"
+                ],
+                index=0,
+                label_visibility="collapsed",
+                horizontal=False,
+            )
             col1, col2 = st.columns(2)
             with col1:
                 if st.button("Back"):
@@ -112,7 +101,11 @@ def main():
                     st.rerun()
             with col2:
                 if st.button("Generate Sharecode"):
-                    st.json(survey.to_json())
+                    st.json({
+                        "used_st_before": q1,
+                        "current_location": q2,
+                        "residence_duration": q3
+                    })
         
     else:
         with content_container:
