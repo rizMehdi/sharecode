@@ -6,7 +6,7 @@ def ChangeButtonColour(button_key, font_color, background_color='transparent'):
         <script>
             var elements = window.parent.document.querySelectorAll('button');
             for (var i = 0; i < elements.length; ++i) {{ 
-                if (elements[i].getAttribute('data-testid') == '{button_key}') {{ 
+                if (elements[i].getAttribute('data-testid') == 'stButton' && elements[i].innerText == '{button_key}') {{ 
                     elements[i].style.color ='{font_color}';
                     elements[i].style.background = '{background_color}'
                 }}
@@ -86,10 +86,10 @@ def main():
             )
             col1, col2 = st.columns([1, 2])
             with col1:
-                if st.button("Back", key="back_1"):
+                if st.button("Back", key="Back"):
                     st.session_state['current_page'] = 0
                     st.rerun()
-                ChangeButtonColour('back_1', 'white', 'blue')
+                ChangeButtonColour('Back', 'white', 'blue')
             with col2:
                 if st.button("Next", key="next_1"):
                     st.session_state['current_page'] = 2
@@ -108,10 +108,10 @@ def main():
             )
             col1, col2, pad = st.columns([1, 1, 2])
             with col1:
-                if st.button("Back", key="back_2"):
+                if st.button("Back", key="Back"):
                     st.session_state['current_page'] = 1
                     st.rerun()
-                ChangeButtonColour('back_2', 'white', 'blue')
+                ChangeButtonColour('Back', 'white', 'blue')
             with col2:
                 if st.button("Generate Sharecode", key="submit"):
                     st.json({
