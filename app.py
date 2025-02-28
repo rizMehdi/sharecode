@@ -71,6 +71,7 @@ def main():
                 st.rerun()
         
         elif st.session_state.get('current_page', 0) == 1:
+            ChangeButtonColour('Back', 'white', 'blue')
             q2 = st.radio(
                 "current_location",
                 options=[
@@ -89,13 +90,14 @@ def main():
                 if st.button("Back", key="back_1"):
                     st.session_state['current_page'] = 0
                     st.rerun()
-                ChangeButtonColour('Back', 'white', 'blue')
+                
             with col2:
                 if st.button("Next", key="next_1"):
                     st.session_state['current_page'] = 2
                     st.rerun()
         
         elif st.session_state.get('current_page', 0) == 2:
+            ChangeButtonColour('Back', 'white', 'blue')
             q3 = st.radio(
                 "residence_duration",
                 options=[
@@ -111,7 +113,7 @@ def main():
                 if st.button("Back", key="back_2"):
                     st.session_state['current_page'] = 1
                     st.rerun()
-                ChangeButtonColour('Back', 'white', 'blue')
+                # ChangeButtonColour('Back', 'white', 'blue')
             with col2:
                 if st.button("Generate Sharecode", key="submit"):
                     st.json({
