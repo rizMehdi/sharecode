@@ -84,24 +84,17 @@ def main():
                 # label_visibility="collapsed",
                 horizontal=False,
             )
-            # col1, col2 = st.columns([1, 1])
-            # with col1:
-            #     if st.button("Back", key="back_1"):
-            #         st.session_state['current_page'] = 0
-            #         st.rerun()
-            #     ChangeButtonColour('Back', 'white', 'blue')
-            # with col2:
-            #     if st.button("Next", key="next_1"):
-            #         st.session_state['current_page'] = 2
-            #         st.rerun()
-            if st.button("Back", key="back_1"):
-                st.session_state['current_page'] = 0
-                st.rerun()
-            ChangeButtonColour('Back', 'white', 'blue')
-            if st.button("Next", key="next_1"):
-                st.session_state['current_page'] = 2
-                st.rerun()    
-                
+            col1, col2, pad= st.columns([1, 1, 3])
+            with col1:
+                if st.button("Back", key="back_1"):
+                    st.session_state['current_page'] = 0
+                    st.rerun()
+                ChangeButtonColour('Back', 'white', 'blue')
+            with col2:
+                if st.button("Next", key="next_1"):
+                    st.session_state['current_page'] = 2
+                    st.rerun()
+        
         elif st.session_state.get('current_page', 0) == 2:
             q3 = st.radio(
                 "residence_duration",
