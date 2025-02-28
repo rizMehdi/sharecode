@@ -84,26 +84,26 @@ def main():
                 st.rerun()
         
         elif st.session_state.get('current_page', 0) == 1:
-            q2_value = Q2.display()
             col1, col2 = st.columns([1, 1])
             with col1:
                 if st.button("Back", key="back_1"):
                     st.session_state['current_page'] = 0
                     st.rerun()
                 ChangeButtonColour('st-key-back_1', 'white', 'blue')
+            q2_value = Q2.display()
             with col2:
                 if st.button("Next", key="next_1"):
                     st.session_state['current_page'] = 2
                     st.rerun()
         
         elif st.session_state.get('current_page', 0) == 2:
-            q3_value = Q3.display()
             col1, col2 = st.columns([1, 1])
             with col1:
                 if st.button("Back", key="back_2"):
                     st.session_state['current_page'] = 1
                     st.rerun()
                 ChangeButtonColour('st-key-back_2', 'white', 'blue')
+            q3_value = Q3.display()
             with col2:
                 if st.button("Generate Sharecode", key="submit"):
                     st.json({
