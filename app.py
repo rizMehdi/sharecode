@@ -1,4 +1,19 @@
 import streamlit as st
+import streamlit.components.v1 as components
+
+def ChangeButtonColour(widget_label, font_color, background_color='transparent'):
+    htmlstr = f"""
+        <script>
+            var elements = window.parent.document.querySelectorAll('button');
+            for (var i = 0; i < elements.length; ++i) {{ 
+                if (elements[i].innerText == '{widget_label}') {{ 
+                    elements[i].style.color ='{font_color}';
+                    elements[i].style.background = '{background_color}'
+                }}
+            }}
+        </script>
+        """
+    components.html(f"{htmlstr}", height=0, width=0)
 
 def main():
     # Create a container to manage visibility of content
@@ -22,17 +37,16 @@ def main():
                 background-color: white;
                 color: grey;
             }}
-            .element-container:has(#button-back) + div button {{
-                background-color: blue;
-                color: white;
-            }}
             .stButton > button:hover {{
                 color: white;
             }}
             .stMarkdown {{
                 font-size: {text_size};
             }}
-
+            .button-container {{
+                display: flex;
+                justify-content: space-between;
+            }}
             </style>
             """, unsafe_allow_html=True)
 
@@ -70,12 +84,12 @@ def main():
                 # label_visibility="collapsed",
                 horizontal=False,
             )
-            st.markdown('<span id="button-back"></span>', unsafe_allow_html=True)
             col1, col2 = st.columns([1, 1])
             with col1:
                 if st.button("Back", key="back_1"):
                     st.session_state['current_page'] = 0
                     st.rerun()
+                ChangeButtonColour('Back', 'white', 'blue')
             with col2:
                 if st.button("Next", key="next_1"):
                     st.session_state['current_page'] = 2
@@ -92,12 +106,12 @@ def main():
                 # label_visibility="collapsed",
                 horizontal=False,
             )
-            st.markdown('<span id="button-back"></span>', unsafe_allow_html=True)
             col1, col2 = st.columns([1, 1])
             with col1:
                 if st.button("Back", key="back_2"):
                     st.session_state['current_page'] = 1
                     st.rerun()
+                ChangeButtonColour('Back', 'white', 'blue')
             with col2:
                 if st.button("Generate Sharecode", key="submit"):
                     st.json({
