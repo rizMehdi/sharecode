@@ -33,6 +33,9 @@ def main():
                 background-color: blue;
                 color: white;
             }
+            .stButton > button:hover {
+                color: white;
+            }
             </style>
             """, unsafe_allow_html=True)
 
@@ -53,7 +56,6 @@ def main():
                     horizontal=False,
                 )
                     
-
             if pages.current == 1:
                 # selected_page0 == "British Citizen":
                 location = survey.radio(
