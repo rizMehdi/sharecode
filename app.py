@@ -22,15 +22,15 @@ def main():
         st.markdown("""
             <style>
             .stButton > button {
-                background-color: blue;
+                background-color: green;
                 color: white;
             }
             .stButton > button:disabled {
                 background-color: grey;
                 color: white;
             }
-            .stButton > button:nth-child(1) {
-                background-color: green;
+            .stButton > div:nth-child(1) > button {
+                background-color: blue;
                 color: white;
             }
             .stButton > button:hover {
