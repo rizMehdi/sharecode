@@ -73,9 +73,9 @@ def main():
                 label_visibility="collapsed",
                 horizontal=False,
             )
-            col1, col2 = st.columns(2)
+            st.markdown('<span id="button-back"></span>', unsafe_allow_html=True)
+            col1, col2 = st.columns([1, 1])
             with col1:
-                st.markdown('<span id="button-back"></span>', unsafe_allow_html=True)
                 if st.button("Back", key="back_1"):
                     st.session_state['current_page'] = 0
                     st.rerun()
@@ -95,9 +95,9 @@ def main():
                 label_visibility="collapsed",
                 horizontal=False,
             )
-            col1, col2 = st.columns(2)
+            st.markdown('<span id="button-back"></span>', unsafe_allow_html=True)
+            col1, col2 = st.columns([1, 1])
             with col1:
-                st.markdown('<span id="button-back"></span>', unsafe_allow_html=True)
                 if st.button("Back", key="back_2"):
                     st.session_state['current_page'] = 1
                     st.rerun()
