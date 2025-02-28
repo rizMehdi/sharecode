@@ -5,6 +5,9 @@ def main():
     # Create a container to manage visibility of content
     content_container = st.container()
     
+    # Set text size
+    text_size = "16px"
+    
     if st.session_state.get('button_clicked', False):
         # Clear the previous content
         content_container.empty()
@@ -18,24 +21,27 @@ def main():
         pages.prev_button = pages.default_btn_previous("Back")
         pages.next_button = pages.default_btn_next("Next")
 
-        # Apply custom styles to buttons
-        st.markdown("""
+        # Apply custom styles to buttons and text
+        st.markdown(f"""
             <style>
-            .stButton > button {
+            .stButton > button {{
                 background-color: green;
                 color: white;
-            }
-            .stButton > button:disabled {
+            }}
+            .stButton > button:disabled {{
                 background-color: white;
                 color: grey;
-            }
-            .stButton > div:nth-child(1) > button {
+            }}
+            .stButton > div:nth-child(1) > button {{
                 background-color: blue;
                 color: white;
-            }
-            .stButton > button:hover {
+            }}
+            .stButton > button:hover {{
                 color: white;
-            }
+            }}
+            .stMarkdown {{
+                font-size: {text_size};
+            }}
             </style>
             """, unsafe_allow_html=True)
 
