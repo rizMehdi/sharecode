@@ -102,8 +102,8 @@ def main():
                 st.session_state['current_page'] = 0
                 st.rerun()
             ChangeButtonColour('st-key-back_1', 'white', 'blue')
-            st.write("q2 being shown")
-            # q2_value = Q2.display()
+            # st.write("q2 being shown")
+            q2_value = Q2.display()
             with st.expander("Why we are asking this questions?"):
                 st.write('''
 This is to check if you are habitual resident.
