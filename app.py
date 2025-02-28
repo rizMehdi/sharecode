@@ -52,7 +52,7 @@ def main():
                     "None of the above"
                 ],
                 index=0,
-                label_visibility="collapsed",
+                # label_visibility="collapsed",
                 horizontal=False,
             )
             if st.button("Next", key="next_0"):
@@ -70,7 +70,7 @@ def main():
                     "None of the Above"
                 ],
                 index=0,
-                label_visibility="collapsed",
+                # label_visibility="collapsed",
                 horizontal=False,
             )
             st.markdown('<span id="button-back"></span>', unsafe_allow_html=True)
@@ -92,7 +92,7 @@ def main():
                     "2 years or more"
                 ],
                 index=0,
-                label_visibility="collapsed",
+                # label_visibility="collapsed",
                 horizontal=False,
             )
             st.markdown('<span id="button-back"></span>', unsafe_allow_html=True)
