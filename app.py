@@ -22,7 +22,7 @@ def main():
         st.markdown("""
             <style>
             .stButton > button {
-                background-color: green;
+                background-color: blue;
                 color: white;
             }
             .stButton > button:disabled {
@@ -30,7 +30,7 @@ def main():
                 color: white;
             }
             .stButton > button:nth-child(1) {
-                background-color: blue;
+                background-color: green;
                 color: white;
             }
             .stButton > button:hover {
