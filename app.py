@@ -102,8 +102,8 @@ def main():
                 st.session_state['current_page'] = 0
                 st.rerun()
             ChangeButtonColour('st-key-back_1', 'white', 'blue')
-            q2_value = Q2.display()
             st.write("q2 being shown")
+            q2_value = Q2.display()
             if st.button("Next", key="next_1"):
                 st.session_state['current_page'] = 2
                 st.rerun()
