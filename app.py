@@ -96,6 +96,7 @@ def main():
             if st.button("Next", key="next_0"):
                 st.session_state['current_page'] = 1
                 st.rerun()
+            whyQ("Q1")
         
         elif st.session_state.get('current_page', 0) == 1:
             if st.button("Back", key="back_1"):
@@ -103,11 +104,11 @@ def main():
                 st.rerun()
             ChangeButtonColour('st-key-back_1', 'white', 'blue')
             q2_value = Q2.display()
-            whyQ("Q2")
             if st.button("Next", key="next_1"):
                 st.session_state['current_page'] = 2
                 st.rerun()
-        
+            whyQ("Q2")
+
         elif st.session_state.get('current_page', 0) == 2:
             if st.button("Back", key="back_2"):
                 st.session_state['current_page'] = 1
@@ -120,6 +121,8 @@ def main():
                     "current_location": q2_value,
                     "residence_duration": q3_value
                 })
+
+            whyQ("Q3")
         
     else:
         with content_container:
