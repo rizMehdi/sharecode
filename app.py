@@ -21,7 +21,7 @@ def main():
     content_container = st.container()
     
     # Set text size
-    text_size = "16px"
+    text_size = "26px"
     
     if st.session_state.get('button_clicked', False):
         # Clear the previous content
