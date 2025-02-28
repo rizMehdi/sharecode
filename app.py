@@ -31,7 +31,6 @@ def main():
         survey = ss.StreamlitSurvey("IRESHA Sharecode")
 
         # Define questions
-        Q1_text=ss.write("Are you any of the following?")
         Q1 = ss.Radio(survey, "Are you any of the following?", options=[
             "British Citizen",
             "Irish Citizen",
@@ -75,14 +74,13 @@ def main():
                 justify-content: space-between;
             }}
             .stRadio > label {{
-                font-size: 18px;
+                font-size: 28px;
             }}
             </style>
             """, unsafe_allow_html=True)
 
         # Display questions based on the current page
         if st.session_state.get('current_page', 0) == 0:
-            Q1_text.display()
             q1_value = Q1.display()
             if st.button("Next", key="next_0"):
                 st.session_state['current_page'] = 1
