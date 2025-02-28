@@ -17,16 +17,16 @@ def ChangeButtonColour(button_key, font_color, background_color='transparent'):
     components.html(f"{htmlstr}", height=0, width=0)
 
 
-
+# st.markdown("""
+#     <style>footer {visibility: hidden;}
+#     header {visibility: hidden;}</style>
+#     """, unsafe_allow_html=True)
 
 
 def main():
     # Create a container to manage visibility of content
 
-    st.markdown("""
-    <style>footer {visibility: hidden;}
-    header {visibility: hidden;}</style>
-    """, unsafe_allow_html=True)
+
 
     content_container = st.container()
     
@@ -41,6 +41,7 @@ def main():
         survey = ss.StreamlitSurvey("IRESHA Sharecode")
 
         # Define questions
+
         Q1 = ss.Radio(survey, "Are you any of the following?", options=[
             "British Citizen",
             "Irish Citizen",
@@ -49,13 +50,16 @@ def main():
             "None of the above"
         ], horizontal=False)
 
-        Q2 = ss.Radio(survey, "Where do you currently live?", options=[
-            "UK",
-            "Republic of Ireland",
-            "Isle of Man",
-            "Channel Islands",
-            "None of the Above"
-        ], horizontal=False)
+        Q2_container = st.container()
+        with Q2_container:
+            Q2_text = st.write("Where do you currently live?")
+            Q2 = ss.Radio(survey, "Where do you currently live?", options=[
+                "UK",
+                "Republic of Ireland",
+                "Isle of Man",
+                "Channel Islands",
+                "None of the Above"
+            ], horizontal=False)
 
         Q3 = ss.Radio(survey, "Since how long have you been residing in your current place of residence?", options=[
             "Less than 2 years",
@@ -101,6 +105,7 @@ def main():
                 st.session_state['current_page'] = 0
                 st.rerun()
             ChangeButtonColour('st-key-back_1', 'white', 'blue')
+            Q2_container
             q2_value = Q2.display()
             if st.button("Next", key="next_1"):
                 st.session_state['current_page'] = 2
