@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit_survey as ss
 
 def main():
     # Create a container to manage visibility of content
@@ -8,26 +9,28 @@ def main():
         # Clear the previous content
         content_container.empty()
         
-        # Add the eligibility check content
-        option = st.radio("Are you any of the following?", [
-            "British Citizen",
-            "Irish Citizen",
-            "Commonwealth Citizen",
-            "Diplomat or their family member based in the UK",
-            "None of the above"
-        ])
-        
-        st.write(f"You selected: {option}")
-        
-        if option == "British Citizen":
-            location = st.radio("Where do you currently live?", [
-                "UK",
-                "Republic of Ireland",
-                "Isle of Man",
-                "Channel Islands",
-                "None of the Above"
-            ])
-            st.write(f"You selected: {location}")
+        # Initialize the survey
+        survey = ss.StreamlitSurvey("Survey Example 2 - Advanced Usage")
+        pages = survey.pages(2, on_submit=lambda: st.json(survey.to_json()))
+
+        # Button customization
+        pages.submit_button = pages.default_btn_submit("Soumettre")
+        pages.prev_button = pages.default_btn_previous("Retour")
+        pages.next_button = pages.default_btn_next("Prochain")
+
+        with pages:
+            if pages.current == 0:
+                st.write("Have you used Streamlit before?")
+                used_before = survey.radio(
+                    "used_st_before",
+                    options=["NA", "Yes", "No"],
+                    index=0,
+                    label_visibility="collapsed",
+                    horizontal=True,
+                )
+            if pages.current == 1:
+                st.write("This is the last question.")
+                acknowledge = survey.checkbox("Acknowledge")
         
         if st.button("Back"):
             st.session_state['button_clicked'] = False
