@@ -55,11 +55,6 @@ def main():
             horizontal=False,
         )
 
-        # Button customization
-        submit_button = survey.default_btn_submit("Generate Sharecode")
-        prev_button = survey.default_btn_previous("Back")
-        next_button = survey.default_btn_next("Next")
-
         # Apply custom styles to buttons and text
         st.markdown(f"""
             <style>
@@ -92,26 +87,32 @@ def main():
         if st.session_state.get('current_page', 0) == 0:
             st.write("Are you any of the following?")
             q1.display()
-            if next_button:
+            if st.button("Next"):
                 st.session_state['current_page'] = 1
                 st.rerun()
         
         elif st.session_state.get('current_page', 0) == 1:
             q2.display()
-            if prev_button:
-                st.session_state['current_page'] = 0
-                st.rerun()
-            if next_button:
-                st.session_state['current_page'] = 2
-                st.rerun()
+            col1, col2 = st.columns(2)
+            with col1:
+                if st.button("Back"):
+                    st.session_state['current_page'] = 0
+                    st.rerun()
+            with col2:
+                if st.button("Next"):
+                    st.session_state['current_page'] = 2
+                    st.rerun()
         
         elif st.session_state.get('current_page', 0) == 2:
             q3.display()
-            if prev_button:
-                st.session_state['current_page'] = 1
-                st.rerun()
-            if submit_button:
-                st.json(survey.to_json())
+            col1, col2 = st.columns(2)
+            with col1:
+                if st.button("Back"):
+                    st.session_state['current_page'] = 1
+                    st.rerun()
+            with col2:
+                if st.button("Generate Sharecode"):
+                    st.json(survey.to_json())
         
     else:
         with content_container:
