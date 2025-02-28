@@ -18,6 +18,14 @@ def ChangeButtonColour(button_key, font_color, background_color='transparent'):
 
 def main():
     # Create a container to manage visibility of content
+
+    hide_st_style = """
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    """
+    st.markdown(hide_st_style, unsafe_allow_html=True)
+
+    
     content_container = st.container()
     
     # Set text size
