@@ -43,6 +43,7 @@ def info(question_number):
 def main():
     # Create a container to manage visibility of content
     content_container = st.container()
+    st.image("img/IRESHAwide.png", width=200)
     
     # Set text size
     text_size = "16px"
@@ -163,7 +164,7 @@ def main():
     else:
         with content_container:
             # st.title("IRESHA Sharecode")
-            st.image("img/IRESHAlogo.png", width=200)
+            # st.image("img/IRESHAlogo.png", width=200)
             # st.header("Immigration/Residence Status Eligibility for Social Housing Assistance - Sharecode")
 
             st.write("This webapp can be used to generate a sharecode indicating that you fulfil the minimum immigration/residence status eligibility requirements for social-housing assistance.")
