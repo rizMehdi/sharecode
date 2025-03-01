@@ -257,7 +257,7 @@ def main():
             }}
             </style>
             """, unsafe_allow_html=True)
-
+        st.session_state['current_page'] = "createPage1"
         # Display questions based on the current page
         if st.session_state.get('current_page', 0) == "createPage1":#0:#createPage1
             # if st.button("Back", key="back_Q2"):
