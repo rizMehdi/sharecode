@@ -356,6 +356,8 @@ def main():
             
             if st.button("Check eligibility and create sharecode"):
                 st.session_state['button_clicked'] = True
+                st.session_state['current_page'] = "createPage1"
+        #         st.rerun()
                 st.rerun()
         
 if __name__ == "__main__":
