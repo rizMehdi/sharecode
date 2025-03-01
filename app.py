@@ -264,8 +264,25 @@ def main():
                 st.session_state['current_page'] = 1
                 st.rerun()
             info("Q1")
-            
-        
+            if q1_value=="UK Citizen" or q1_value=="Irish Citizen" or q1_value=="Diplomat or their family member based in the UK":
+                createPage1.display()
+                if st.button("Next", key="next_0"):
+                    st.session_state['current_page'] = 1
+                    st.rerun()
+                info("Q1")
+            elif q1_value=="Commonwealth Citizen":  
+                commonwealth.display()
+                if st.button("Next", key="next_0"):
+                    st.session_state['current_page'] = 1
+                    st.rerun()
+                info("Q1")
+            elif q1_value=="None of the above": 
+                createPage2.display()
+                if st.button("Next", key="next_0"):
+                    st.session_state['current_page'] = 1
+                    st.rerun()
+                info("Q1")
+
         elif st.session_state.get('current_page', 0) == 1:
             if st.button("Back", key="back_1"):#, use_container_width=True):
                 st.session_state['current_page'] = 0
