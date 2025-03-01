@@ -19,8 +19,8 @@ def ChangeButtonColour(button_key, font_color, background_color='transparent'):
 def info(question_number):
     # extra info:
     # why we asking this question
-    if question_number == "habitual9":
-        with st.expander("Why we are asking this question?"):
+    with st.expander("Why we are asking this question?"):
+        if question_number == "habitual9":
             st.write('''
             This is to check if you are a habitual resident.
             'Habitual residence' means your main home is in the Common Travel Area and you do not have plans to live anywhere else.
@@ -28,10 +28,11 @@ def info(question_number):
             Most people have to be habitually resident to apply for council housing. This applies to British and Irish citizens as well as other passport holders.
             For more information, please check the habitual residence test here: https://www.gov.uk/guidance/homelessness-code-of-guidance-for-local-authorities/annex-1-the-habitual-residence-test
             ''')
-    elif question_number == "createPage1":  
-        with st.expander("Why we are asking this question?"):
+        elif question_number == "createPage1":  
             st.write('''British, Irish citizens, Commonwealth citizens with right to abode, and diplomats are eligible for housing assistance if they are habitually resident in the UK.
             For further information, check the Homelessness code of guidance for local authorities here: https://www.gov.uk/guidance/homelessness-code-of-guidance-for-local-authorities/chapter-7-eligibility-for-assistance''')
+
+
 
     if question_number == "createPage1":
         with st.expander("Who is a Commonwealth Citizen?"):
