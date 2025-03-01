@@ -274,7 +274,7 @@ def main():
                 if st.button("Next", key="next_createPage1"):
                     st.session_state['current_page'] = 1
                     st.rerun()
-                info("Q1")
+                # info("Q1")
             elif createPage1_value=="Commonwealth Citizen":  
                 # commonwealth.display()
                 if st.button("Next", key="next_commonwealth"):
@@ -287,6 +287,25 @@ def main():
                     st.session_state['current_page'] = 3
                     st.rerun()
                 # info("Q1")
+
+        elif st.session_state.get('current_page', 0) == 1:#habitual9
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = 0
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            habitual9_value = createPage1.display()
+            info("habitual9_value")
+            if habitual9_value=="None of the above": 
+                if st.button("Next", key="next_createPage3"):
+                    st.session_state['current_page'] = 4
+                    st.rerun()
+            else:
+                if st.button("Next", key="next_createPage4"):
+                    st.session_state['current_page'] = 5
+                    st.rerun()
+
+
+
 
         # elif st.session_state.get('current_page', 0) == 1:#habitual9
         #     if st.button("Back", key="back_Q2"):
