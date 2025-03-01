@@ -277,7 +277,7 @@ def main():
                     st.rerun()
             elif createPage1_value=="None of the above": 
                 if st.button("Next", key="next_createPage2"):
-                    st.session_state['current_page'] = "createpage3"#3
+                    st.session_state['current_page'] = "createpage2"#3
                     st.rerun()
 
 
@@ -290,15 +290,30 @@ def main():
             if verbose: st.write("habitual9_value", habitual9_value)
             info("habitual9_value")
             if habitual9_value=="None of the above": 
-                if st.button("Next", key="next_createPage3"):
-                    st.session_state['current_page'] = 4
+                if st.button("Next", key="next_result3"):
+                    st.session_state['current_page'] = "result3"
                     st.rerun()
             else:
-                if st.button("Next", key="next_createPage4"):
-                    st.session_state['current_page'] = 5
+                if st.button("Next", key="next_habitual10"):
+                    st.session_state['current_page'] = "habitual10"
                     st.rerun()
 
-
+        elif st.session_state.get('current_page', 0) == "habitual10":#1:
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "habitual9"#0
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            habitual10_value = habitual10.display()
+            if verbose: st.write("habitual10_value", habitual10_value)
+            info("habitual10_value")
+            if habitual10_value=="Less than 2 years": 
+                if st.button("Next", key="next_result1"):
+                    st.session_state['current_page'] = "result1"
+                    st.rerun()
+            elif habitual10_value=="2 years or more": 
+                if st.button("Next", key="next_result2"):
+                    st.session_state['current_page'] = "next_result2"
+                    st.rerun()
 
 
         # elif st.session_state.get('current_page', 0) == 1:#habitual9
