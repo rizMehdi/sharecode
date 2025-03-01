@@ -127,12 +127,12 @@ def main():
             whyQ("Q1")
         
         elif st.session_state.get('current_page', 0) == 1:
-            if st.button("Back", key="back_1", use_container_width=True):
+            if st.button("Back", key="back_1"):#, use_container_width=True):
                 st.session_state['current_page'] = 0
                 st.rerun()
             ChangeButtonColour('st-key-back_1', 'white', 'blue')
             q2_value = Q2.display()
-            if st.button("Next", key="next_1", use_container_width=True):
+            if st.button("Next", key="next_1"):#, use_container_width=True):
                 st.session_state['current_page'] = 2
                 st.rerun()
             whyQ("Q2")
