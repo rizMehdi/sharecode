@@ -267,7 +267,7 @@ def main():
             createPage1_value = createPage1.display()
             if verbose: st.write("createPage1_value", createPage1_value)
             info("createPage1")
-            if createPage1_value=="UK Citizen" or createPage1_value=="Irish Citizen" or createPage1_value=="Diplomat or their family member based in the UK":
+            if createPage1_value=="British Citizen" or createPage1_value=="Irish Citizen" or createPage1_value=="Diplomat or their family member based in the UK":
                 # habitual9.display()
                 if st.button("Next", key="next_createPage1"):
                     st.session_state['current_page'] = 1
