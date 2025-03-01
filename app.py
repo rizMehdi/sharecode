@@ -56,7 +56,7 @@ def main():
         Q1 = ss.Radio(survey, "Are you any of the following?", options=[
             "British Citizen",
             "Irish Citizen",
-            "Commonwealth Citizen (?)",
+            "Commonwealth Citizen",
             "Diplomat or their family member based in the UK",
             "None of the above"
         ], horizontal=False)
