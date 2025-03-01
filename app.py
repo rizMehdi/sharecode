@@ -16,7 +16,7 @@ def ChangeButtonColour(button_key, font_color, background_color='transparent'):
         """
     components.html(f"{htmlstr}", height=0, width=0)
 
-def whyQ(question_number):
+def info(question_number):
     if question_number == "Q2":
         with st.expander("Why we are asking this question?"):
             st.write('''
@@ -32,7 +32,6 @@ For more information, please check the habitual residence test here: https://www
 For further information, check the Homelessness code of guidance for local authorities here: https://www.gov.uk/guidance/homelessness-code-of-guidance-for-local-authorities/chapter-7-eligibility-for-assistance''')
 
 
-def info(question_number):
     if question_number == "Q1":
         with st.expander("Who is a Commonwealth Citizen?"):
             st.write("A Commonwealth citizen is a citizen of a Commonwealth of Nations member state. Check here if your conuntry is a commonwealth member https://thecommonwealth.org/our-member-countries")
@@ -267,7 +266,7 @@ def main():
                 st.session_state['current_page'] = 1
                 st.rerun()
             info("Q1")
-            whyQ("Q1")
+            
         
         elif st.session_state.get('current_page', 0) == 1:
             if st.button("Back", key="back_1"):#, use_container_width=True):
@@ -278,7 +277,7 @@ def main():
             if st.button("Next", key="next_1"):#, use_container_width=True):
                 st.session_state['current_page'] = 2
                 st.rerun()
-            whyQ("Q2")
+            info("Q2")
         elif st.session_state.get('current_page', 0) == 2:
             if st.button("Back", key="back_2"):
                 st.session_state['current_page'] = 1
@@ -292,7 +291,7 @@ def main():
                     "residence_duration": q3_value
                 })
 
-            whyQ("Q3")
+            info("Q3")
         
     else:
         with content_container:
