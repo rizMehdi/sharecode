@@ -18,12 +18,12 @@ def ChangeButtonColour(button_key, font_color, background_color='transparent'):
 
 def info(question_number):
     # extra info:
-    if question_number == "Q1":
+    if question_number == "createPage1":
         with st.expander("Who is a Commonwealth Citizen?"):
             st.write("A Commonwealth citizen is a citizen of a Commonwealth of Nations member state. Check here if your conuntry is a commonwealth member https://thecommonwealth.org/our-member-countries")
 
     # why we asking this question
-    if question_number == "Q2":
+    if question_number == "habitual9":
         with st.expander("Why we are asking this question?"):
             st.write('''
             This is to check if you are a habitual resident.
@@ -32,7 +32,7 @@ def info(question_number):
             Most people have to be habitually resident to apply for council housing. This applies to British and Irish citizens as well as other passport holders.
             For more information, please check the habitual residence test here: https://www.gov.uk/guidance/homelessness-code-of-guidance-for-local-authorities/annex-1-the-habitual-residence-test
             ''')
-    elif question_number == "Q1":  
+    elif question_number == "createPage1":  
         with st.expander("Why we are asking this question?"):
             st.write('''British, Irish citizens, Commonwealth citizens with right to abode, and diplomats are eligible for housing assistance if they are habitually resident in the UK.
 For further information, check the Homelessness code of guidance for local authorities here: https://www.gov.uk/guidance/homelessness-code-of-guidance-for-local-authorities/chapter-7-eligibility-for-assistance''')
@@ -259,29 +259,34 @@ def main():
 
         # Display questions based on the current page
         if st.session_state.get('current_page', 0) == 0:
+            # if st.button("Back", key="back_Q2"):
+            #     st.session_state['current_page'] = 0
+            #     st.rerun()
+            # ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             createPage1_value = createPage1.display()
-            if st.button("Next", key="next_Q1"):
-                st.session_state['current_page'] = 1
-                st.rerun()
-            info("Q1")
+            info("createPage1")
+            # if st.button("Next", key="next_Q1"):
+            #     st.session_state['current_page'] = 1
+            #     st.rerun()
+            # # info("Q1")
             if createPage1_value=="UK Citizen" or createPage1_value=="Irish Citizen" or createPage1_value=="Diplomat or their family member based in the UK":
-                habitual9.display()
+                # habitual9.display()
                 if st.button("Next", key="next_createPage1"):
                     st.session_state['current_page'] = 1
                     st.rerun()
                 info("Q1")
             elif createPage1_value=="Commonwealth Citizen":  
-                commonwealth.display()
+                # commonwealth.display()
                 if st.button("Next", key="next_commonwealth"):
                     st.session_state['current_page'] = 2
                     st.rerun()
-                info("Q1")
+                # info("Q1")
             elif createPage1_value=="None of the above": 
-                createPage2.display()
+                # createPage2.display()
                 if st.button("Next", key="next_createPage2"):
                     st.session_state['current_page'] = 3
                     st.rerun()
-                info("Q1")
+                # info("Q1")
 
         # elif st.session_state.get('current_page', 0) == 1:#habitual9
         #     if st.button("Back", key="back_Q2"):
