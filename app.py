@@ -34,7 +34,7 @@ For further information, check the Homelessness code of guidance for local autho
 
 def info(question_number):
     if question_number == "Q1":
-        with st.expander("material/help Who is a Commonwealth Citizen?"):
+        with st.expander("Who is a Commonwealth Citizen?"):
             st.write("A Commonwealth citizen is a citizen of a Commonwealth of Nations member state. Check here if your conuntry is a commonwealth member https://thecommonwealth.org/our-member-countries")
                               
         # popover = st.popover("Who is a Commonwealth Citizen?")
