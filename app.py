@@ -88,6 +88,15 @@ def main():
         </style>
         """, unsafe_allow_html=True)
 
+        
+        st.markdown("""
+        <style>
+        #root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 0rem;}
+        </style>
+        """, unsafe_allow_html=True)
+
+
+
         # Apply custom styles to buttons and text
         st.markdown(f"""
             <style>
