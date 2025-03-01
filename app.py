@@ -40,6 +40,7 @@ For further information, check the Homelessness code of guidance for local autho
 def main():
     verbose=True
     if verbose: st.write(st.session_state.get('current_page', 0))
+    st.write("check")
     # Create a container to manage visibility of content
     content_container = st.container()
     st.image("img/IRESHAwide.png", width=200)
