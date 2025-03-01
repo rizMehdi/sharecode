@@ -267,9 +267,9 @@ def main():
             #     st.rerun()
             # ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             createPage1_value = createPage1.display()
-            if verbose: st.write("createPage1_value", createPage1_value)
+            # if verbose: st.write("createPage1_value", createPage1_value)
             if createPage1_value=="British Citizen" or createPage1_value=="Irish Citizen" or createPage1_value=="Diplomat or their family member based in the UK":
-                if st.button("Next", key="next_createPage1"):
+                if st.button("Next", key="next_habitual9"):
                     st.session_state['current_page'] = "habitual9"#1
                     st.rerun()
             elif createPage1_value=="Commonwealth Citizen":  
@@ -289,7 +289,7 @@ def main():
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             habitual9_value = habitual9.display()
-            if verbose: st.write("habitual9_value", habitual9_value)
+            # if verbose: st.write("habitual9_value", habitual9_value)
             if habitual9_value=="None of the above": 
                 if st.button("Next", key="next_result3"):
                     st.session_state['current_page'] = "result3"
@@ -298,7 +298,7 @@ def main():
                 if st.button("Next", key="next_habitual10"):
                     st.session_state['current_page'] = "habitual10"
                     st.rerun()
-            info("habitual9_value")
+            info("habitual9")
 
         elif st.session_state.get('current_page') == "habitual10":#1:
             if st.button("Back", key="back_Q2"):
@@ -306,43 +306,166 @@ def main():
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             habitual10_value = habitual10.display()
-            if verbose: st.write("habitual10_value", habitual10_value)
+            # if verbose: st.write("habitual10_value", habitual10_value)
             if habitual10_value=="Less than 2 years": 
                 if st.button("Next", key="next_result1"):
                     st.session_state['current_page'] = "result1"
                     st.rerun()
             elif habitual10_value=="2 years or more": 
                 if st.button("Next", key="next_result2"):
-                    st.session_state['current_page'] = "next_result2"
+                    st.session_state['current_page'] = "result2"
                     st.rerun()
-            info("habitual10_value")
+            info("habitual10")
+
+        elif st.session_state.get('current_page') == "commonwealth":#1:
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "createpage1"#0
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            commonwealth_value = commonwealth.display()
+            if commonwealth_value=="I have right to abode in UK": 
+                if st.button("Next", key="next_habitual1"):
+                    st.session_state['current_page'] = "habitual1"
+                    st.rerun()
+            elif commonwealth_value=="I have indefinite leave to remain (settlement)": 
+                if st.button("Next", key="next_sponsorship1"):
+                    st.session_state['current_page'] = "sponsorship1"
+                    st.rerun()
+            elif commonwealth_value=="I have limited leave to remain" or commonwealth_value=="None of the above": 
+                if st.button("Next", key="next_result6"):
+                    st.session_state['current_page'] = "result6"
+                    st.rerun()
+            info("commonwealth")
 
 
-        # elif st.session_state.get('current_page', 0) == 1:#habitual9
-        #     if st.button("Back", key="back_Q2"):
-        #         st.session_state['current_page'] = 0
-        #         st.rerun()
-        #     ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-        #     q2_value = Q2.display()
-        #     if st.button("Next", key="next_Q2"):
-        #         st.session_state['current_page'] = 2
-        #         st.rerun()
-        #     info("Q2")
-        # elif st.session_state.get('current_page', 0) == 2:
-        #     if st.button("Back", key="back_Q3"):
-        #         st.session_state['current_page'] = 1
-        #         st.rerun()
-        #     ChangeButtonColour('st-key-back_Q3', 'white', 'blue')
-        #     q3_value = Q3.display()
-        #     if st.button("Generate Sharecode", key="submit"):
-        #         st.json({
-        #             "used_st_before": q1_value,
-        #             "current_location": q2_value,
-        #             "residence_duration": q3_value
-        #         })
+        elif st.session_state.get('current_page') == "sponsorship1":#1:
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "commonwealth"#0
+                # st.session_state['current_page'] = "createPage2"#0todotodotodotodotodotodo
+                # st.session_state['current_page'] = "createPage2"#0todotodotodotodotodotodo
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            sponsorship1 = sponsorship1.display()
+            if sponsorship1=="Yes": 
+                if st.button("Next", key="next_habitual1"):
+                    st.session_state['current_page'] = "habitual1"
+                    st.rerun()
+            elif sponsorship1=="No": 
+                if st.button("Next", key="next_habitual3"):
+                    st.session_state['current_page'] = "habitual3"
+                    st.rerun()
+            info("sponsorship1")
 
-        #     info("Q3")
-        
+        elif st.session_state.get('current_page') == "habitual1":#1:
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "sponsorship1"#0
+                # st.session_state['current_page'] = "commonwealth"#0todotodotodotodotodotodo
+                # st.session_state['current_page'] = "createPage4"#0todotodotodotodotodotodo
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            habitual1 = habitual1.display()
+            if habitual1=="None of the Above": 
+                if st.button("Next", key="next_result3"):
+                    st.session_state['current_page'] = "result3"
+                    st.rerun()
+            else: 
+                if st.button("Next", key="next_habitual2"):
+                    st.session_state['current_page'] = "habitual2"
+                    st.rerun()
+            info("habitual1")
+
+        elif st.session_state.get('current_page') == "habitual2":#1:
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "habitual1"#0
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            habitual2 = habitual2.display()
+            # if verbose: st.write("habitual10_value", habitual10_value)
+            if habitual2=="Less than 2 years": 
+                if st.button("Next", key="next_exemption1"):
+                    st.session_state['current_page'] = "exemption1"
+                    st.rerun()
+            elif habitual2=="2 years or more": 
+                if st.button("Next", key="next_result4"):
+                    st.session_state['current_page'] = "result4"
+                    st.rerun()
+            info("habitual2")        
+
+        elif st.session_state.get('current_page') == "exemption1":#1:
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "habitual1"#0
+                # st.session_state['current_page'] = "habitual4"#0todotodotodotodotodotodo
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            exemption1 = exemption1.display()
+            # if verbose: st.write("habitual10_value", habitual10_value)
+            if exemption1=="Yes": 
+                if st.button("Next", key="next_result4"):
+                    st.session_state['current_page'] = "result4"
+                    st.rerun()
+            elif exemption1=="No": 
+                if st.button("Next", key="next_result5"):
+                    st.session_state['current_page'] = "result5"
+                    st.rerun()
+            info("exemption1")  
+
+        elif st.session_state.get('current_page') == "habitual3":#1:#habitual9
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "sponsorship1"#0
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            habitual3 = habitual3.display()
+            if habitual3=="None of the above": 
+                if st.button("Next", key="next_result3"):
+                    st.session_state['current_page'] = "result3"
+                    st.rerun()
+            else:
+                if st.button("Next", key="next_habitual4"):
+                    st.session_state['current_page'] = "habitual4"
+                    st.rerun()
+            info("habitual3")            
+
+
+        elif st.session_state.get('current_page') == "habitual4":#1:
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "habitual3"#0
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            habitual4 = habitual4.display()
+            if habitual4=="Less than 5 years": 
+                if st.button("Next", key="next_exemption1"):
+                    st.session_state['current_page'] = "exemption1"
+                    st.rerun()
+            elif habitual4=="5 years or more": 
+                if st.button("Next", key="next_result4"):
+                    st.session_state['current_page'] = "result4"
+                    st.rerun()
+            info("habitual4")    
+
+        elif st.session_state.get('current_page') == "createPage2":#0:#createPage1
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "createPage1"
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            createPage2 = createPage1.display()
+            if createPage2=="EEA national with a presettled status in the UK": 
+                if st.button("Next", key="next_rejection1"):
+                    st.session_state['current_page'] = "rejection1"#1
+                    st.rerun()
+            elif createPage2=="EEA national or family member with settled status in the UK":  
+                if st.button("Next", key="next_sponsorship1"):
+                    st.session_state['current_page'] = "sponsorship1"#2
+                    st.rerun()
+            elif createPage2=="National of any other country with indefinite leave to remain in the UK (Settlement)":  
+                if st.button("Next", key="next_sponsorship1"):
+                    st.session_state['current_page'] = "sponsorship1"#2
+                    st.rerun()
+            elif createPage2=="None of the above applies to me": 
+                if st.button("Next", key="next_createPage3"):
+                    st.session_state['current_page'] = "createpage3"#3
+                    st.rerun()
+            info("createPage2")
+
     else:
         with content_container:
             # st.title("IRESHA Sharecode")
