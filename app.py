@@ -37,9 +37,9 @@ def info(question_number):
         # with st.expander("Who is a Commonwealth Citizen?"):
         #     st.write("A Commonwealth citizen is a citizen of a Commonwealth of Nations member state. Check here if your conuntry is a commonwealth member https://thecommonwealth.org/our-member-countries")
                               
-        # popover = st.popover("Who is a Commonwealth Citizen?")
-        # popover.write("A Commonwealth citizen is a citizen of a Commonwealth of Nations member state. Check here if your conuntry is a commonwealth member https://thecommonwealth.org/our-member-countries")
-        st.popover("Who is a Commonwealth Citizen?","A Commonwealth citizen is a citizen of a Commonwealth of Nations member state. Check here if your conuntry is a commonwealth member https://thecommonwealth.org/our-member-countries")    
+        popover = st.popover("Who is a Commonwealth Citizen?")
+        popover.write("A Commonwealth citizen is a citizen of a Commonwealth of Nations member state. Check here if your conuntry is a commonwealth member https://thecommonwealth.org/our-member-countries")
+        # st.popover("Who is a Commonwealth Citizen?","A Commonwealth citizen is a citizen of a Commonwealth of Nations member state. Check here if your conuntry is a commonwealth member https://thecommonwealth.org/our-member-countries")    
 def main():
     # Create a container to manage visibility of content
     content_container = st.container()
