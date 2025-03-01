@@ -140,7 +140,7 @@ def main():
     else:
         with content_container:
             # st.title("IRESHA Sharecode")
-            st.image("img/IRESHAlogo.png")
+            st.image("img/IRESHAlogo.png", width=200)
             # st.header("Immigration/Residence Status Eligibility for Social Housing Assistance - Sharecode")
 
             st.write("This webapp can be used to generate a sharecode indicating that you fulfil the minimum immigration/residence status eligibility requirements for social-housing assistance.")
