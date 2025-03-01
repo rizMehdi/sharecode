@@ -31,6 +31,13 @@ For more information, please check the habitual residence test here: https://www
             st.write('''British, Irish citizens, Commonwealth citizens with right to abode, and diplomats are eligible for housing assistance if they are habitually resident in the UK.
 For further information, check the Homelessness code of guidance for local authorities here: https://www.gov.uk/guidance/homelessness-code-of-guidance-for-local-authorities/chapter-7-eligibility-for-assistance''')
 
+
+def info(question_number):
+    if question_number == "Q1":
+        with st.expander("Who is a Commonwealth Citizen?"):
+            st.write("A Commonwealth citizen is a citizen of a Commonwealth of Nations member state. Check here if your conuntry is a commonwealth member https://thecommonwealth.org/our-member-countries")
+                              
+
 def main():
     # Create a container to manage visibility of content
     content_container = st.container()
@@ -100,6 +107,7 @@ def main():
             if st.button("Next", key="next_0"):
                 st.session_state['current_page'] = 1
                 st.rerun()
+            info("Q1")
             whyQ("Q1")
         
         elif st.session_state.get('current_page', 0) == 1:
@@ -111,8 +119,6 @@ def main():
             if st.button("Next", key="next_1"):
                 st.session_state['current_page'] = 2
                 st.rerun()
-            popover = st.popover("❓")
-            popover.write("A Commonwealth citizen is a citizen of a Commonwealth of Nations member state. Check here if your conuntry is a commonwealth member https://thecommonwealth.org/our-member-countries")
             whyQ("Q2")
         elif st.session_state.get('current_page', 0) == 2:
             if st.button("Back", key="back_2"):
