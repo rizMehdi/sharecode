@@ -268,7 +268,6 @@ def main():
             # ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             createPage1_value = createPage1.display()
             if verbose: st.write("createPage1_value", createPage1_value)
-            info("createPage1")
             if createPage1_value=="British Citizen" or createPage1_value=="Irish Citizen" or createPage1_value=="Diplomat or their family member based in the UK":
                 if st.button("Next", key="next_createPage1"):
                     st.session_state['current_page'] = "habitual9"#1
@@ -281,6 +280,7 @@ def main():
                 if st.button("Next", key="next_createPage2"):
                     st.session_state['current_page'] = "createpage2"#3
                     st.rerun()
+            info("createPage1")
 
 
         elif st.session_state.get('current_page') == "habitual9":#1:#habitual9
@@ -290,7 +290,6 @@ def main():
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             habitual9_value = habitual9.display()
             if verbose: st.write("habitual9_value", habitual9_value)
-            info("habitual9_value")
             if habitual9_value=="None of the above": 
                 if st.button("Next", key="next_result3"):
                     st.session_state['current_page'] = "result3"
@@ -299,6 +298,7 @@ def main():
                 if st.button("Next", key="next_habitual10"):
                     st.session_state['current_page'] = "habitual10"
                     st.rerun()
+            info("habitual9_value")
 
         elif st.session_state.get('current_page') == "habitual10":#1:
             if st.button("Back", key="back_Q2"):
@@ -307,7 +307,6 @@ def main():
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             habitual10_value = habitual10.display()
             if verbose: st.write("habitual10_value", habitual10_value)
-            info("habitual10_value")
             if habitual10_value=="Less than 2 years": 
                 if st.button("Next", key="next_result1"):
                     st.session_state['current_page'] = "result1"
@@ -316,6 +315,7 @@ def main():
                 if st.button("Next", key="next_result2"):
                     st.session_state['current_page'] = "next_result2"
                     st.rerun()
+            info("habitual10_value")
 
 
         # elif st.session_state.get('current_page', 0) == 1:#habitual9
