@@ -259,54 +259,54 @@ def main():
 
         # Display questions based on the current page
         if st.session_state.get('current_page', 0) == 0:
-            q1_value = Q1.display()
+            createPage1_value = createPage1.display()
             if st.button("Next", key="next_Q1"):
                 st.session_state['current_page'] = 1
                 st.rerun()
             info("Q1")
-            if q1_value=="UK Citizen" or q1_value=="Irish Citizen" or q1_value=="Diplomat or their family member based in the UK":
-                createPage1.display()
+            if createPage1_value=="UK Citizen" or q1_value=="Irish Citizen" or q1_value=="Diplomat or their family member based in the UK":
+                habitual9.display()
                 if st.button("Next", key="next_createPage1"):
                     st.session_state['current_page'] = 1
                     st.rerun()
                 info("Q1")
-            elif q1_value=="Commonwealth Citizen":  
+            elif createPage1_value=="Commonwealth Citizen":  
                 commonwealth.display()
                 if st.button("Next", key="next_commonwealth"):
-                    st.session_state['current_page'] = 1
+                    st.session_state['current_page'] = 2
                     st.rerun()
                 info("Q1")
-            elif q1_value=="None of the above": 
+            elif createPage1_value=="None of the above": 
                 createPage2.display()
                 if st.button("Next", key="next_createPage2"):
-                    st.session_state['current_page'] = 1
+                    st.session_state['current_page'] = 3
                     st.rerun()
                 info("Q1")
 
-        elif st.session_state.get('current_page', 0) == 1:
-            if st.button("Back", key="back_Q2"):
-                st.session_state['current_page'] = 0
-                st.rerun()
-            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            q2_value = Q2.display()
-            if st.button("Next", key="next_Q2"):
-                st.session_state['current_page'] = 2
-                st.rerun()
-            info("Q2")
-        elif st.session_state.get('current_page', 0) == 2:
-            if st.button("Back", key="back_Q3"):
-                st.session_state['current_page'] = 1
-                st.rerun()
-            ChangeButtonColour('st-key-back_Q3', 'white', 'blue')
-            q3_value = Q3.display()
-            if st.button("Generate Sharecode", key="submit"):
-                st.json({
-                    "used_st_before": q1_value,
-                    "current_location": q2_value,
-                    "residence_duration": q3_value
-                })
+        # elif st.session_state.get('current_page', 0) == 1:#habitual9
+        #     if st.button("Back", key="back_Q2"):
+        #         st.session_state['current_page'] = 0
+        #         st.rerun()
+        #     ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+        #     q2_value = Q2.display()
+        #     if st.button("Next", key="next_Q2"):
+        #         st.session_state['current_page'] = 2
+        #         st.rerun()
+        #     info("Q2")
+        # elif st.session_state.get('current_page', 0) == 2:
+        #     if st.button("Back", key="back_Q3"):
+        #         st.session_state['current_page'] = 1
+        #         st.rerun()
+        #     ChangeButtonColour('st-key-back_Q3', 'white', 'blue')
+        #     q3_value = Q3.display()
+        #     if st.button("Generate Sharecode", key="submit"):
+        #         st.json({
+        #             "used_st_before": q1_value,
+        #             "current_location": q2_value,
+        #             "residence_duration": q3_value
+        #         })
 
-            info("Q3")
+        #     info("Q3")
         
     else:
         with content_container:
