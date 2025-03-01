@@ -38,6 +38,7 @@ def info(question_number):
 For further information, check the Homelessness code of guidance for local authorities here: https://www.gov.uk/guidance/homelessness-code-of-guidance-for-local-authorities/chapter-7-eligibility-for-assistance''')
    
 def main():
+    verbose=True
     # Create a container to manage visibility of content
     content_container = st.container()
     st.image("img/IRESHAwide.png", width=200)
@@ -264,6 +265,7 @@ def main():
             #     st.rerun()
             # ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             createPage1_value = createPage1.display()
+            if verbose: st.write("createPage1_value")
             info("createPage1")
             if createPage1_value=="UK Citizen" or createPage1_value=="Irish Citizen" or createPage1_value=="Diplomat or their family member based in the UK":
                 # habitual9.display()
@@ -290,6 +292,7 @@ def main():
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             habitual9_value = habitual9.display()
+            if verbose: st.write("habitual9_value")
             info("habitual9_value")
             if habitual9_value=="None of the above": 
                 if st.button("Next", key="next_createPage3"):
