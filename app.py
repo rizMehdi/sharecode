@@ -111,8 +111,9 @@ def main():
             if st.button("Next", key="next_1"):
                 st.session_state['current_page'] = 2
                 st.rerun()
+            popover = st.popover("❓")
+            popover.write("A Commonwealth citizen is a citizen of a Commonwealth of Nations member state. Check here if your conuntry is a commonwealth member https://thecommonwealth.org/our-member-countries")
             whyQ("Q2")
-
         elif st.session_state.get('current_page', 0) == 2:
             if st.button("Back", key="back_2"):
                 st.session_state['current_page'] = 1
