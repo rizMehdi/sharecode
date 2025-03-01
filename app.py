@@ -77,6 +77,139 @@ def main():
             "2 years or more"
         ], horizontal=False)
 
+        createPage1 = ss.Radio(survey, "Are you any of the following?", options=[
+            "British Citizen",
+            "Irish Citizen",
+            "Commonwealth Citizen",
+            "Diplomat or their family member based in the UK",
+            "None of the above"
+        ], horizontal=False)
+
+        habitual9 = ss.Radio(survey, "Where do you currently live?", options=[
+            "UK",
+            "Republic of Ireland",
+            "Isle of Man",
+            "Channel Islands",
+            "None of the Above"
+        ], horizontal=False)
+
+        commonwealth = ss.Radio(survey, "Do you have any of the following?", options=[
+            "I have right to abode in UK",
+            "I have indefinite leave to remain (settlement)",
+            "I have limited leave to remain",
+            "None of the above"
+        ], horizontal=False)
+
+        habitual10 = ss.Radio(survey, "Since how long have you been residing in your current place of residence?", options=[
+            "Less than 2 years",
+            "2 years or more"
+        ], horizontal=False)
+
+        sponsorship1 = ss.Radio(survey, "Is your settled status based on a sponsorship?", options=[
+            "Yes",
+            "No"
+        ], horizontal=False)
+
+        habitual1 = ss.Radio(survey, "Where do you currently live?", options=[
+            "UK",
+            "Republic of Ireland",
+            "Isle of Man",
+            "Channel Islands"
+        ], horizontal=False)
+
+        habitual2 = ss.Radio(survey, "Since how long have you been residing in your current place of residence?", options=[
+            "Less than 2 years",
+            "2 years or more"
+        ], horizontal=False)
+
+        exemption1 = ss.Radio(survey, "Are you in the UK as a result of deportation, expulsion or other removal by compulsion of law from another country to the UK?", options=[
+            "Yes",
+            "No"
+        ], horizontal=False)
+
+        habitual3 = ss.Radio(survey, "Where do you currently live?", options=[
+            "Republic of Ireland",
+            "Isle of Man",
+            "Channel Islands",
+            "None of the Above"
+        ], horizontal=False)
+
+        habitual4 = ss.Radio(survey, "Since how long have you been residing in your current place of residence?", options=[
+            "Less than 5 years",
+            "5 years or more"
+        ], horizontal=False)
+
+        createPage2 = ss.Radio(survey, "Which of the following applies to you?", options=[
+            "EEA national with a presettled status in the UK",
+            "EEA national or family member with settled status in the UK",
+            "National of any other country with indefinite leave to remain in the UK (Settlement)",
+            "None of the above applies to me"
+        ], horizontal=False)
+
+        rejection1 = ss.Radio(survey, "Does any of the following apply to you?", options=[
+            "My right to reside in the UK is only due to my jobseeker status",
+            "I only have an initial right to reside in the UK",
+            "None of the above applies to me"
+        ], horizontal=False)
+
+        createPage4 = ss.Radio(survey, "Are you a person or family member of a person who is a frontier worker in the UK before 31 December 2020?", options=[
+            "None of the above applies to me"
+        ], horizontal=False)
+
+        createPage3 = ss.Radio(survey, "Are you a person/dependant of a person who:", options=[
+            "Has a refugee status abroad",
+            "Former asylum seeker who has been instructed to move but failed to do so (failed asylum seeker)",
+            "Is in the UK in breach of UK immigration laws",
+            "Failed asylum seeker with dependant children",
+            "None of the above applies to me"
+        ], horizontal=False)
+
+        createPage5 = ss.Radio(survey, "Are you a person who:", options=[
+            "Has a refugee status in the UK",
+            "Has humanitarian protection",
+            "Limited leave to enter and remain in the UK as the family member of a ‘relevant person of Northern Ireland’",
+            "Is in the UK on the basis of the Afghan Relocations and Assistance Policy",
+            "Had to move to the UK from Ukraine as part of the Russian invasion of Ukraine",
+            "Is a victim of human trafficking/slavery and granted permission to stay in the UK",
+            "Is a victim of transnational marriage abandonment and granted permission to stay in the UK",
+            "None of the above applies to me"
+        ], horizontal=False)
+
+        habitual5 = ss.Radio(survey, "Where do you currently live?", options=[
+            "Republic of Ireland",
+            "Isle of Man",
+            "Channel Islands",
+            "None of the Above"
+        ], horizontal=False)
+
+        habitual6 = ss.Radio(survey, "Since how long have you been residing in your current place of residence?", options=[
+            "Less than 2 years",
+            "2 years or more"
+        ], horizontal=False)
+
+        createPage6 = ss.Radio(survey, "Are you a person who:", options=[
+            "Has leave to enter or remain in the UK on family and private life grounds",
+            "Has a British National Overseas Visa",
+            "None of the above applies to me"
+        ], horizontal=False)
+
+        publicFunds1 = ss.Radio(survey, "Do you have access to public funds?", options=[
+            "Yes",
+            "No"
+        ], horizontal=False)
+
+        createPage7 = ss.Radio(survey, "Are you a person who:", options=[
+            "Moved to the UK in connection with the collapse of the Afghanistan government",
+            "Moved to the UK from Sudan in connection with the violence",
+            "Moved to the UK in connection to the Hamas Terrorist Attack",
+            "None of the above applies to me"
+        ], horizontal=False)
+
+        publicFunds2 = ss.Radio(survey, "Do you have access to public funds?", options=[
+            "Yes",
+            "No"
+        ], horizontal=False)
+
 
         # st.markdown("""
         # <style>
