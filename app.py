@@ -18,10 +18,6 @@ def ChangeButtonColour(button_key, font_color, background_color='transparent'):
 
 def info(question_number):
     # extra info:
-    if question_number == "createPage1":
-        with st.expander("Who is a Commonwealth Citizen?"):
-            st.write("A Commonwealth citizen is a citizen of a Commonwealth of Nations member state. Check here if your conuntry is a commonwealth member https://thecommonwealth.org/our-member-countries")
-
     # why we asking this question
     if question_number == "habitual9":
         with st.expander("Why we are asking this question?"):
@@ -35,8 +31,12 @@ def info(question_number):
     elif question_number == "createPage1":  
         with st.expander("Why we are asking this question?"):
             st.write('''British, Irish citizens, Commonwealth citizens with right to abode, and diplomats are eligible for housing assistance if they are habitually resident in the UK.
-For further information, check the Homelessness code of guidance for local authorities here: https://www.gov.uk/guidance/homelessness-code-of-guidance-for-local-authorities/chapter-7-eligibility-for-assistance''')
-   
+            For further information, check the Homelessness code of guidance for local authorities here: https://www.gov.uk/guidance/homelessness-code-of-guidance-for-local-authorities/chapter-7-eligibility-for-assistance''')
+
+    if question_number == "createPage1":
+        with st.expander("Who is a Commonwealth Citizen?"):
+            st.write("A Commonwealth citizen is a citizen of a Commonwealth of Nations member state. Check here if your conuntry is a commonwealth member https://thecommonwealth.org/our-member-countries")
+    
 def main():
     verbose=True
     if verbose: st.write(st.session_state.get('current_page', "start"))
