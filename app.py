@@ -52,7 +52,7 @@ def main():
         
         # Initialize the survey
         survey = ss.StreamlitSurvey("IRESHA Sharecode")
-        st.session_state['current_page'] = "createPage1"
+        # st.session_state['current_page'] = "createPage1"
         # Define questions
         Q1 = ss.Radio(survey, "Are you any of the following? (old)", options=[
             "British Citizen",
