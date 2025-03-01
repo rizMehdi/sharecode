@@ -259,7 +259,7 @@ def main():
             """, unsafe_allow_html=True)
 
         # Display questions based on the current page
-        if st.session_state.get('current_page', 0) == 0:#createPage1
+        if st.session_state.get('current_page', 0) == "createPage1":#0:#createPage1
             # if st.button("Back", key="back_Q2"):
             #     st.session_state['current_page'] = 0
             #     st.rerun()
@@ -268,27 +268,22 @@ def main():
             if verbose: st.write("createPage1_value", createPage1_value)
             info("createPage1")
             if createPage1_value=="British Citizen" or createPage1_value=="Irish Citizen" or createPage1_value=="Diplomat or their family member based in the UK":
-                # habitual9.display()
                 if st.button("Next", key="next_createPage1"):
-                    st.session_state['current_page'] = 1
+                    st.session_state['current_page'] = "habitual9"#1
                     st.rerun()
-                # info("Q1")
             elif createPage1_value=="Commonwealth Citizen":  
-                # commonwealth.display()
                 if st.button("Next", key="next_commonwealth"):
-                    st.session_state['current_page'] = 2
+                    st.session_state['current_page'] = "commonwealth"#2
                     st.rerun()
-                # info("Q1")
             elif createPage1_value=="None of the above": 
-                # createPage2.display()
                 if st.button("Next", key="next_createPage2"):
-                    st.session_state['current_page'] = 3
+                    st.session_state['current_page'] = "createpage3"#3
                     st.rerun()
-                # info("Q1")
 
-        elif st.session_state.get('current_page', 0) == 1:#habitual9
+
+        elif st.session_state.get('current_page', 0) == "habitual9":#1:#habitual9
             if st.button("Back", key="back_Q2"):
-                st.session_state['current_page'] = 0
+                st.session_state['current_page'] = "createPage1"#0
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             habitual9_value = habitual9.display()
