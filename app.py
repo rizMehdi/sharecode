@@ -259,13 +259,13 @@ def main():
             """, unsafe_allow_html=True)
 
         # Display questions based on the current page
-        if st.session_state.get('current_page', 0) == 0:
+        if st.session_state.get('current_page', 0) == 0:#createPage1
             # if st.button("Back", key="back_Q2"):
             #     st.session_state['current_page'] = 0
             #     st.rerun()
             # ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             createPage1_value = createPage1.display()
-            if verbose: st.write("createPage1_value")
+            if verbose: st.write("createPage1_value", createPage1_value)
             info("createPage1")
             if createPage1_value=="UK Citizen" or createPage1_value=="Irish Citizen" or createPage1_value=="Diplomat or their family member based in the UK":
                 # habitual9.display()
@@ -292,7 +292,7 @@ def main():
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             habitual9_value = habitual9.display()
-            if verbose: st.write("habitual9_value")
+            if verbose: st.write("habitual9_value", habitual9_value)
             info("habitual9_value")
             if habitual9_value=="None of the above": 
                 if st.button("Next", key="next_createPage3"):
