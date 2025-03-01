@@ -18,7 +18,7 @@ def ChangeButtonColour(button_key, font_color, background_color='transparent'):
 
 def whyQ(question_number):
     if question_number == "Q2":
-        popover = st.popover("Why we are asking this question?"):
+        popover = st.popover("Why we are asking this question?")
         popover.write('''
 This is to check if you are a habitual resident.
 'Habitual residence' means your main home is in the Common Travel Area and you do not have plans to live anywhere else.
