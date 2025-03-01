@@ -82,6 +82,8 @@ def main():
             .stButton > button {{
                 background-color: green;
                 color: white;
+                margin-top: 0px;
+                margin-bottom: 0px;
             }}
             .stButton > button:disabled {{
                 background-color: white;
