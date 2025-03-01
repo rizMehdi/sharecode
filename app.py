@@ -265,10 +265,6 @@ def main():
             # ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             createPage1_value = createPage1.display()
             info("createPage1")
-            # if st.button("Next", key="next_Q1"):
-            #     st.session_state['current_page'] = 1
-            #     st.rerun()
-            # # info("Q1")
             if createPage1_value=="UK Citizen" or createPage1_value=="Irish Citizen" or createPage1_value=="Diplomat or their family member based in the UK":
                 # habitual9.display()
                 if st.button("Next", key="next_createPage1"):
@@ -293,7 +289,7 @@ def main():
                 st.session_state['current_page'] = 0
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            habitual9_value = createPage1.display()
+            habitual9_value = habitual9.display()
             info("habitual9_value")
             if habitual9_value=="None of the above": 
                 if st.button("Next", key="next_createPage3"):
