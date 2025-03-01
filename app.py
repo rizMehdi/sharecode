@@ -43,7 +43,7 @@ def info(question_number):
 def main():
     # Create a container to manage visibility of content
     content_container = st.container()
-    st.image("img/IRESHAwide.png", width=200)
+    st.image("img/IRESHAwide.png")#, width=200)
     
     # Set text size
     text_size = "16px"
