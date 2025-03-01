@@ -260,7 +260,7 @@ def main():
             """, unsafe_allow_html=True)
         
         # Display questions based on the current page
-        if st.session_state.get('current_page', createPage1) == "createPage1":#0:#createPage1
+        if st.session_state.get('current_page') == "createPage1":#0:#createPage1
             # if st.button("Back", key="back_Q2"):
             #     st.session_state['current_page'] = 0
             #     st.rerun()
@@ -282,7 +282,7 @@ def main():
                     st.rerun()
 
 
-        elif st.session_state.get('current_page', createPage1) == "habitual9":#1:#habitual9
+        elif st.session_state.get('current_page') == "habitual9":#1:#habitual9
             if st.button("Back", key="back_Q2"):
                 st.session_state['current_page'] = "createPage1"#0
                 st.rerun()
@@ -299,7 +299,7 @@ def main():
                     st.session_state['current_page'] = "habitual10"
                     st.rerun()
 
-        elif st.session_state.get('current_page', createPage1) == "habitual10":#1:
+        elif st.session_state.get('current_page') == "habitual10":#1:
             if st.button("Back", key="back_Q2"):
                 st.session_state['current_page'] = "habitual9"#0
                 st.rerun()
