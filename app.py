@@ -561,19 +561,20 @@ def main():
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             createPage1_value = createPage1.display()
-            st.session_state['prevAnswer'] = createPage1_value
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            # if verbose: st.write("createPage1_value", createPage1_value)
             if createPage1_value=="British Citizen" or createPage1_value=="Irish Citizen" or createPage1_value=="Diplomat or their family member based in the UK":
                 if st.button("Next", key="next_habitual9"):
+                    st.session_state['prevAnswer'] = createPage1_value
                     st.session_state['current_page'] = "habitual9"#1
                     st.rerun()
             elif createPage1_value=="Commonwealth Citizen":  
                 if st.button("Next", key="next_commonwealth"):
+                    st.session_state['prevAnswer'] = createPage1_value
                     st.session_state['current_page'] = "commonwealth"#2
                     st.rerun()
             elif createPage1_value=="None of the above": 
                 if st.button("Next", key="next_createPage2"):
+                    st.session_state['prevAnswer'] = createPage1_value
                     st.session_state['current_page'] = "createPage2"#3
                     st.rerun()
             info("createPage1")
@@ -585,15 +586,15 @@ def main():
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             habitual9_value = habitual9.display()
-            st.session_state['prevAnswer'] = habitual9_value
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            # if verbose: st.write("habitual9_value", habitual9_value)
             if habitual9_value=="None of the above": 
                 if st.button("Next", key="next_result3"):
+                    st.session_state['prevAnswer'] = habitual9_value
                     st.session_state['current_page'] = "result3"
                     st.rerun()
             else:
                 if st.button("Next", key="next_habitual10"):
+                    st.session_state['prevAnswer'] = habitual9_value
                     st.session_state['current_page'] = "habitual10"
                     st.rerun()
             info("habitual9")
@@ -604,15 +605,15 @@ def main():
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             habitual10_value = habitual10.display()
-            st.session_state['prevAnswer'] = habitual10_value
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            # if verbose: st.write("habitual10_value", habitual10_value)
             if habitual10_value=="Less than 2 years": 
                 if st.button("Next", key="next_result1"):
+                    st.session_state['prevAnswer'] = habitual10_value
                     st.session_state['current_page'] = "result1"
                     st.rerun()
             elif habitual10_value=="2 years or more": 
                 if st.button("Next", key="next_result2"):
+                    st.session_state['prevAnswer'] = habitual10_value
                     st.session_state['current_page'] = "result2"
                     st.rerun()
             info("habitual10")
@@ -623,18 +624,20 @@ def main():
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             commonwealth_value = commonwealth.display()
-            st.session_state['prevAnswer'] = commonwealth_value
             if verbose: st.write(st.session_state.get('prevAnswer'))
             if commonwealth_value=="I have right to abode in UK": 
                 if st.button("Next", key="next_habitual1"):
+                    st.session_state['prevAnswer'] = commonwealth_value
                     st.session_state['current_page'] = "habitual1"
                     st.rerun()
             elif commonwealth_value=="I have indefinite leave to remain (settlement)": 
                 if st.button("Next", key="next_sponsorship1"):
+                    st.session_state['prevAnswer'] = commonwealth_value
                     st.session_state['current_page'] = "sponsorship1"
                     st.rerun()
             elif commonwealth_value=="I have limited leave to remain" or commonwealth_value=="None of the above": 
                 if st.button("Next", key="next_result6"):
+                    st.session_state['prevAnswer'] = commonwealth_value
                     st.session_state['current_page'] = "result6"
                     st.rerun()
             info("commonwealth")
@@ -645,15 +648,16 @@ def main():
                 st.session_state['current_page'] = "commonwealth"
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            sponsorship1 = sponsorship1.display()
-            st.session_state['prevAnswer'] = sponsorship1
+            sponsorship1_value = sponsorship1.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            if sponsorship1=="Yes": 
+            if sponsorship1_value=="Yes": 
                 if st.button("Next", key="next_habitual1"):
+                    st.session_state['prevAnswer'] = sponsorship1_value
                     st.session_state['current_page'] = "habitual1"
                     st.rerun()
-            elif sponsorship1=="No": 
+            elif sponsorship1_value=="No": 
                 if st.button("Next", key="next_habitual3"):
+                    st.session_state['prevAnswer'] = sponsorship1_value
                     st.session_state['current_page'] = "habitual3"
                     st.rerun()
             info("sponsorship1")
@@ -663,15 +667,16 @@ def main():
                 st.session_state['current_page'] = "sponsorship1"
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            habitual1 = habitual1.display()
-            st.session_state['prevAnswer'] = habitual1
+            habitual1_value = habitual1.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            if habitual1=="None of the above": 
+            if habitual1_value=="None of the above": 
                 if st.button("Next", key="next_result3"):
+                    st.session_state['prevAnswer'] = habitual1_value
                     st.session_state['current_page'] = "result3"
                     st.rerun()
             else: 
                 if st.button("Next", key="next_habitual2"):
+                    st.session_state['prevAnswer'] = habitual1_value
                     st.session_state['current_page'] = "habitual2"
                     st.rerun()
             info("habitual1")
@@ -681,16 +686,16 @@ def main():
                 st.session_state['current_page'] = "habitual1"
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            habitual2 = habitual2.display()
-            st.session_state['prevAnswer'] = habitual2
+            habitual2_value = habitual2.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            # if verbose: st.write("habitual10_value", habitual10_value)
-            if habitual2=="Less than 2 years": 
+            if habitual2_value=="Less than 2 years": 
                 if st.button("Next", key="next_exemption1"):
+                    st.session_state['prevAnswer'] = habitual2_value
                     st.session_state['current_page'] = "exemption1"
                     st.rerun()
-            elif habitual2=="2 years or more": 
+            elif habitual2_value=="2 years or more": 
                 if st.button("Next", key="next_result4"):
+                    st.session_state['prevAnswer'] = habitual2_value
                     st.session_state['current_page'] = "result4"
                     st.rerun()
             info("habitual2")        
@@ -701,16 +706,16 @@ def main():
                 # st.session_state['current_page'] = "habitual4"#0todotodotodotodotodotodo
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            exemption1 = exemption1.display()
-            st.session_state['prevAnswer'] = exemption1
+            exemption1_value = exemption1.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            # if verbose: st.write("habitual10_value", habitual10_value)
-            if exemption1=="Yes": 
+            if exemption1_value=="Yes": 
                 if st.button("Next", key="next_result4"):
+                    st.session_state['prevAnswer'] = exemption1_value
                     st.session_state['current_page'] = "result4"
                     st.rerun()
-            elif exemption1=="No": 
+            elif exemption1_value=="No": 
                 if st.button("Next", key="next_result5"):
+                    st.session_state['prevAnswer'] = exemption1_value
                     st.session_state['current_page'] = "result5"
                     st.rerun()
             info("exemption1")  
@@ -720,15 +725,16 @@ def main():
                 st.session_state['current_page'] = "sponsorship1"#0
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            habitual3 = habitual3.display()
-            st.session_state['prevAnswer'] = habitual3
+            habitual3_value = habitual3.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            if habitual3=="None of the above": 
+            if habitual3_value=="None of the above": 
                 if st.button("Next", key="next_result3"):
+                    st.session_state['prevAnswer'] = habitual3_value
                     st.session_state['current_page'] = "result3"
                     st.rerun()
             else:
                 if st.button("Next", key="next_habitual4"):
+                    st.session_state['prevAnswer'] = habitual3_value
                     st.session_state['current_page'] = "habitual4"
                     st.rerun()
             info("habitual3")            
@@ -739,15 +745,16 @@ def main():
                 st.session_state['current_page'] = "habitual3"#0
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            habitual4 = habitual4.display()
-            st.session_state['prevAnswer'] = habitual4
+            habitual4_value = habitual4.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            if habitual4=="Less than 5 years": 
+            if habitual4_value=="Less than 5 years": 
                 if st.button("Next", key="next_exemption1"):
+                    st.session_state['prevAnswer'] = habitual4_value
                     st.session_state['current_page'] = "exemption1"
                     st.rerun()
-            elif habitual4=="5 years or more": 
+            elif habitual4_value=="5 years or more": 
                 if st.button("Next", key="next_result4"):
+                    st.session_state['prevAnswer'] = habitual4_value
                     st.session_state['current_page'] = "result4"
                     st.rerun()
             info("habitual4")    
@@ -757,23 +764,26 @@ def main():
                 st.session_state['current_page'] = "createPage1"
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            createPage2 = createPage2.display()
-            st.session_state['prevAnswer'] = createPage2
+            createPage2_value = createPage2.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            if createPage2=="EEA national with a presettled status in the UK": 
+            if createPage2_value=="EEA national with a presettled status in the UK": 
                 if st.button("Next", key="next_rejection1"):
+                    st.session_state['prevAnswer'] = createPage2_value
                     st.session_state['current_page'] = "rejection1"#1
                     st.rerun()
-            elif createPage2=="EEA national or family member with settled status in the UK":  
+            elif createPage2_value=="EEA national or family member with settled status in the UK":  
                 if st.button("Next", key="next_sponsorship1"):
+                    st.session_state['prevAnswer'] = createPage2_value
                     st.session_state['current_page'] = "sponsorship1"#2
                     st.rerun()
-            elif createPage2=="National of any other country with indefinite leave to remain in the UK (Settlement)":  
+            elif createPage2_value=="National of any other country with indefinite leave to remain in the UK (Settlement)":  
                 if st.button("Next", key="next_sponsorship1"):
+                    st.session_state['prevAnswer'] = createPage2_value
                     st.session_state['current_page'] = "sponsorship1"#2
                     st.rerun()
-            elif createPage2=="None of the above applies to me": 
+            elif createPage2_value=="None of the above applies to me": 
                 if st.button("Next", key="next_createPage3"):
+                    st.session_state['prevAnswer'] = createPage2_value
                     st.session_state['current_page'] = "createPage3"#3
                     st.rerun()
             info("createPage2")
@@ -784,15 +794,16 @@ def main():
                 st.session_state['current_page'] = "createPage2"#0
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            rejection1 = rejection1.display()
-            st.session_state['prevAnswer'] = rejection1
+            rejection1_value = rejection1.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            if rejection1=="My right to reside in the UK is only due to my jobseeker status" or rejection1=="I only have an initial right to reside in the UK": 
+            if rejection1_value=="My right to reside in the UK is only due to my jobseeker status" or rejection1_value=="I only have an initial right to reside in the UK": 
                 if st.button("Next", key="next_result8"):
+                    st.session_state['prevAnswer'] = rejection1_value
                     st.session_state['current_page'] = "result8"
                     st.rerun()
             else:
                 if st.button("Next", key="next_createPage4"):
+                    st.session_state['prevAnswer'] = rejection1_value
                     st.session_state['current_page'] = "createPage4"
                     st.rerun()
             info("rejection1")   
@@ -804,15 +815,16 @@ def main():
                 st.session_state['current_page'] = "rejection1"#0
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            createPage4 = createPage4.display()
-            st.session_state['prevAnswer'] = createPage4
+            createPage4_value = createPage4.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            if createPage4=="None of the above applies to me": 
+            if createPage4_value=="None of the above applies to me": 
                 if st.button("Next", key="next_habitual1"):
+                    st.session_state['prevAnswer'] = createPage4_value
                     st.session_state['current_page'] = "habitual1"
                     st.rerun()
             else:
                 if st.button("Next", key="next_result7"):
+                    st.session_state['prevAnswer'] = createPage4_value
                     st.session_state['current_page'] = "result7"
                     st.rerun()
             info("createPage4")    
@@ -824,15 +836,16 @@ def main():
                 st.session_state['current_page'] = "createPage2"
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            createPage3 = createPage3.display()
-            st.session_state['prevAnswer'] = createPage3
+            createPage3_value = createPage3.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            if createPage3=="None of the above applies to me": 
+            if createPage3_value=="None of the above applies to me": 
                 if st.button("Next", key="next_createPage5"):
+                    st.session_state['prevAnswer'] = createPage3_value
                     st.session_state['current_page'] = "createPage5"
                     st.rerun()
             else:
                 if st.button("Next", key="next_result9"):
+                    st.session_state['prevAnswer'] = createPage3_value
                     st.session_state['current_page'] = "result9"
                     st.rerun()
             info("createPage3")
@@ -844,15 +857,16 @@ def main():
                 st.session_state['current_page'] = "createPage3"#0
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            createPage5 = createPage5.display()
-            st.session_state['prevAnswer'] = createPage5
+            createPage5_value = createPage5.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            if createPage5=="None of the above applies to me": 
+            if createPage5_value=="None of the above applies to me": 
                 if st.button("Next", key="next_createPage6"):
+                    st.session_state['prevAnswer'] = createPage5_value
                     st.session_state['current_page'] = "createPage6"
                     st.rerun()
             else:
                 if st.button("Next", key="next_habitual5"):
+                    st.session_state['prevAnswer'] = createPage5_value
                     st.session_state['current_page'] = "habitual5"
                     st.rerun()
             info("createPage5")
@@ -865,15 +879,16 @@ def main():
                 st.session_state['current_page'] = "createPage5"#0
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            habitual5 = habitual5.display()
-            st.session_state['prevAnswer'] = habitual5
+            habitual5_value = habitual5.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            if habitual5=="None of the above": 
+            if habitual5_value=="None of the above": 
                 if st.button("Next", key="next_result12"):
+                    st.session_state['prevAnswer'] = habitual5_value
                     st.session_state['current_page'] = "result12"
                     st.rerun()
             else:
                 if st.button("Next", key="next_habitual6"):
+                    st.session_state['prevAnswer'] = habitual5_value
                     st.session_state['current_page'] = "habitual6"
                     st.rerun()
             info("habitual5")     
@@ -884,16 +899,16 @@ def main():
                 st.session_state['current_page'] = "habitual5"#0
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            habitual6 = habitual6.display()
-            st.session_state['prevAnswer'] = habitual6
+            habitual6_value = habitual6.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            # if verbose: st.write("habitual10_value", habitual10_value)
-            if habitual6=="Less than 2 years": 
+            if habitual6_value=="Less than 2 years": 
                 if st.button("Next", key="next_result11"):
+                    st.session_state['prevAnswer'] = habitual6_value
                     st.session_state['current_page'] = "result11"
                     st.rerun()
-            elif habitual6=="2 years or more": 
+            elif habitual6_value=="2 years or more": 
                 if st.button("Next", key="next_result10"):
+                    st.session_state['prevAnswer'] = habitual6_value
                     st.session_state['current_page'] = "result10"
                     st.rerun()
             info("habitual6")    
@@ -907,15 +922,16 @@ def main():
                 st.session_state['current_page'] = "createPage5"#0
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            createPage6 = createPage6.display()
-            st.session_state['prevAnswer'] = createPage6
+            createPage6_value = createPage6.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            if createPage6=="None of the above applies to me": 
+            if createPage6_value=="None of the above applies to me": 
                 if st.button("Next", key="next_createPage7"):
+                    st.session_state['prevAnswer'] = createPage6_value
                     st.session_state['current_page'] = "createPage7"
                     st.rerun()
             else:
                 if st.button("Next", key="next_publicFunds1"):
+                    st.session_state['prevAnswer'] = createPage6_value
                     st.session_state['current_page'] = "publicFunds1"
                     st.rerun()
             info("createPage6")
@@ -927,15 +943,16 @@ def main():
                 st.session_state['current_page'] = "createPage6"#0
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            createPage7 = createPage7.display()
-            st.session_state['prevAnswer'] = createPage7
+            createPage7_value = createPage7.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            if createPage7=="None of the above applies to me": 
+            if createPage7_value=="None of the above applies to me": 
                 if st.button("Next", key="next_result16"):
+                    st.session_state['prevAnswer'] = createPage7_value
                     st.session_state['current_page'] = "result16"
                     st.rerun()
             else:
                 if st.button("Next", key="next_publicFunds2"):
+                    st.session_state['prevAnswer'] = createPage7_value
                     st.session_state['current_page'] = "publicFunds2"
                     st.rerun()
             info("createPage7")
@@ -948,16 +965,16 @@ def main():
                 # st.session_state['current_page'] = "habitual4"#0todotodotodotodotodotodo
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            publicFunds1 = publicFunds1.display()
-            st.session_state['prevAnswer'] = publicFunds1
+            publicFunds1_value = publicFunds1.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            # if verbose: st.write("habitual10_value", habitual10_value)
-            if publicFunds1=="Yes": 
+            if publicFunds1_value=="Yes": 
                 if st.button("Next", key="next_habitual5"):
+                    st.session_state['prevAnswer'] = publicFunds1_value
                     st.session_state['current_page'] = "habitual5"
                     st.rerun()
-            elif publicFunds1=="No": 
+            elif publicFunds1_value=="No": 
                 if st.button("Next", key="next_result13"):
+                    st.session_state['prevAnswer'] = publicFunds1_value
                     st.session_state['current_page'] = "result13"
                     st.rerun()
             info("publicFunds1")  
@@ -971,16 +988,16 @@ def main():
                 # st.session_state['current_page'] = "habitual4"#0todotodotodotodotodotodo
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            publicFunds2 = publicFunds2.display()
-            st.session_state['prevAnswer'] = publicFunds2
+            publicFunds2_value = publicFunds2.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            # if verbose: st.write("habitual10_value", habitual10_value)
-            if publicFunds2=="Yes": 
+            if publicFunds2_value=="Yes": 
                 if st.button("Next", key="next_result15"):
+                    st.session_state['prevAnswer'] = publicFunds2_value
                     st.session_state['current_page'] = "result15"
                     st.rerun()
-            elif publicFunds2=="No": 
+            elif publicFunds2_value=="No": 
                 if st.button("Next", key="next_result14"):
+                    st.session_state['prevAnswer'] = publicFunds2_value
                     st.session_state['current_page'] = "result14"
                     st.rerun()
             info("publicFunds2")  
