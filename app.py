@@ -466,6 +466,193 @@ def main():
                     st.rerun()
             info("createPage2")
 
+
+        elif st.session_state.get('current_page') == "rejection1":#1:
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "createPage2"#0
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            rejection1 = rejection1.display()
+            if rejection1=="My right to reside in the UK is only due to my jobseeker status" or rejection1=="I only have an initial right to reside in the UK": 
+                if st.button("Next", key="next_result8"):
+                    st.session_state['current_page'] = "result8"
+                    st.rerun()
+            else:
+                if st.button("Next", key="next_createPage4"):
+                    st.session_state['current_page'] = "createPage4"
+                    st.rerun()
+            info("rejection1")   
+
+
+
+        elif st.session_state.get('current_page') == "createPage4":#1:
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "rejection1"#0
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            createPage4 = createPage4.display()
+            if createPage4=="None of the above applies to me": 
+                if st.button("Next", key="next_habitual1"):
+                    st.session_state['current_page'] = "habitual1"
+                    st.rerun()
+            else:
+                if st.button("Next", key="next_result7"):
+                    st.session_state['current_page'] = "result7"
+                    st.rerun()
+            info("createPage4")    
+
+
+
+        elif st.session_state.get('current_page') == "createPage3":#1:
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "createPage2"#0
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            createPage3 = createPage3.display()
+            if createPage3=="None of the above applies to me": 
+                if st.button("Next", key="next_createPage5"):
+                    st.session_state['current_page'] = "createPage5"
+                    st.rerun()
+            else:
+                if st.button("Next", key="next_result9"):
+                    st.session_state['current_page'] = "result9"
+                    st.rerun()
+            info("createPage3")
+
+
+
+        elif st.session_state.get('current_page') == "createPage5":#1:
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "createPage3"#0
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            createPage5 = createPage5.display()
+            if createPage5=="None of the above applies to me": 
+                if st.button("Next", key="next_createPage6"):
+                    st.session_state['current_page'] = "createPage6"
+                    st.rerun()
+            else:
+                if st.button("Next", key="next_habitual5"):
+                    st.session_state['current_page'] = "habitual5"
+                    st.rerun()
+            info("createPage5")
+
+
+
+
+        elif st.session_state.get('current_page') == "habitual5":#1:#habitual9
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "createPage5"#0
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            habitual5 = habitual5.display()
+            if habitual5=="None of the above": 
+                if st.button("Next", key="next_result12"):
+                    st.session_state['current_page'] = "result12"
+                    st.rerun()
+            else:
+                if st.button("Next", key="next_habitual6"):
+                    st.session_state['current_page'] = "habitual6"
+                    st.rerun()
+            info("habitual5")     
+
+
+        elif st.session_state.get('current_page') == "habitual6":#1:
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "habitual5"#0
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            habitual6 = habitual6.display()
+            # if verbose: st.write("habitual10_value", habitual10_value)
+            if habitual6=="Less than 2 years": 
+                if st.button("Next", key="next_result11"):
+                    st.session_state['current_page'] = "result11"
+                    st.rerun()
+            elif habitual6=="2 years or more": 
+                if st.button("Next", key="next_result10"):
+                    st.session_state['current_page'] = "result10"
+                    st.rerun()
+            info("habitual6")    
+
+
+
+
+
+        elif st.session_state.get('current_page') == "createPage6":#1:
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "createPage5"#0
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            createPage6 = createPage6.display()
+            if createPage6=="None of the above applies to me": 
+                if st.button("Next", key="next_createPage7"):
+                    st.session_state['current_page'] = "createPage7"
+                    st.rerun()
+            else:
+                if st.button("Next", key="next_publicFunds1"):
+                    st.session_state['current_page'] = "publicFunds1"
+                    st.rerun()
+            info("createPage6")
+
+
+
+        elif st.session_state.get('current_page') == "createPage7":#1:
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "createPage6"#0
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            createPage7 = createPage7.display()
+            if createPage7=="None of the above applies to me": 
+                if st.button("Next", key="next_result16"):
+                    st.session_state['current_page'] = "result16"
+                    st.rerun()
+            else:
+                if st.button("Next", key="next_publicFunds2"):
+                    st.session_state['current_page'] = "publicFunds2"
+                    st.rerun()
+            info("createPage7")
+
+
+
+        elif st.session_state.get('current_page') == "publicFunds1":#1:
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "createPage6"#0
+                # st.session_state['current_page'] = "habitual4"#0todotodotodotodotodotodo
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            publicFunds1 = publicFunds1.display()
+            # if verbose: st.write("habitual10_value", habitual10_value)
+            if publicFunds1=="Yes": 
+                if st.button("Next", key="next_habitual5"):
+                    st.session_state['current_page'] = "habitual5"
+                    st.rerun()
+            elif publicFunds1=="No": 
+                if st.button("Next", key="next_result13"):
+                    st.session_state['current_page'] = "result13"
+                    st.rerun()
+            info("publicFunds1")  
+
+
+
+
+        elif st.session_state.get('current_page') == "publicFunds2":#1:
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "createPage7"#0
+                # st.session_state['current_page'] = "habitual4"#0todotodotodotodotodotodo
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            publicFunds2 = publicFunds2.display()
+            # if verbose: st.write("habitual10_value", habitual10_value)
+            if publicFunds2=="Yes": 
+                if st.button("Next", key="next_result15"):
+                    st.session_state['current_page'] = "result15"
+                    st.rerun()
+            elif publicFunds2=="No": 
+                if st.button("Next", key="next_result14"):
+                    st.session_state['current_page'] = "result14"
+                    st.rerun()
+            info("publicFunds2")  
+
     else:
         with content_container:
             # st.title("IRESHA Sharecode")
