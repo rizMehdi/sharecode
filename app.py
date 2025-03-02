@@ -213,6 +213,7 @@ def show(result):
 
 def main():
     # verbose=True
+    st.logo("img/IRESHAwide.png")
     verbose=False
     if verbose: st.write(st.session_state.get('current_page', "start"))
     # Create a container to manage visibility of content
@@ -223,7 +224,7 @@ def main():
     text_size = "16px"
     
     if st.session_state.get('button_clicked', False):
-        st.image("img/IRESHAwide.png", width=200)
+        # st.image("img/IRESHAwide.png", width=200)
         # Clear the previous content
         content_container.empty()
         
