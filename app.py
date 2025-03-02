@@ -129,7 +129,7 @@ def main():
             "Republic of Ireland",
             "Isle of Man",
             "Channel Islands",
-            "None of the Above"
+            "None of the above"
         ], horizontal=False, key="Q2")
 
         Q3 = ss.Radio(survey, "Since how long have you been residing in your current place of residence?", options=[
@@ -150,7 +150,7 @@ def main():
             "Republic of Ireland",
             "Isle of Man",
             "Channel Islands",
-            "None of the Above"
+            "None of the above"
         ], horizontal=False, key="habitual9")
 
         commonwealth = ss.Radio(survey, "Do you have any of the following?", options=[
@@ -191,7 +191,7 @@ def main():
             "Republic of Ireland",
             "Isle of Man",
             "Channel Islands",
-            "None of the Above"
+            "None of the above"
         ], horizontal=False, key="habitual3")
 
         habitual4 = ss.Radio(survey, "Since how long have you been residing in your current place of residence?", options=[
@@ -239,7 +239,7 @@ def main():
             "Republic of Ireland",
             "Isle of Man",
             "Channel Islands",
-            "None of the Above"
+            "None of the above"
         ], horizontal=False, key="habitual5")
 
         habitual6 = ss.Radio(survey, "Since how long have you been residing in your current place of residence?", options=[
@@ -424,7 +424,7 @@ def main():
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             habitual1 = habitual1.display()
-            if habitual1=="None of the Above": 
+            if habitual1=="None of the above": 
                 if st.button("Next", key="next_result3"):
                     st.session_state['current_page'] = "result3"
                     st.rerun()
