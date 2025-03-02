@@ -489,7 +489,7 @@ def main():
                 st.warning("Please enter the date of birth.")
             if st.button("Submit", key="submit_sharecode"):
                 st.session_state['button_clicked'] = True
-                st.session_state['current_page'] = "sharecodeResult_No"#0
+                st.session_state['current_page'] = "sharecodeResult_Yes"#0
                 st.rerun()
             ChangeButtonColour('st-key-check_eligibility', 'white', 'green')
 
