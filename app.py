@@ -473,9 +473,9 @@ def main():
             # Title or header
             st.subheader("Enter your information")
             # First name input
-            st.text_input("What is your first name?", "This should be the same as on your identity document.")
+            st.text_input("What is your first name? (This should be the same as on your identity document)")
             # Last name input
-            st.text_input("What is your last name?", "This should be the same as on your identity document.")
+            st.text_input("What is your last name? (This should be the same as on your identity document)")
 
 
         # Display questions based on the current page
