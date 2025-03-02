@@ -222,7 +222,7 @@ def main():
     if 'prevAnswer' not in st.session_state:
         st.session_state['prevAnswer'] = "None"
     st.logo("img/IRESHAwide.png")
-    verbose=True
+    verbose=False
     # verbose=True
     # if verbose: st.write(st.session_state.get('current_page', "start"))
     # if verbose: st.write(st.session_state.get('prevAnswer', "None"))
@@ -649,9 +649,16 @@ def main():
             info("commonwealth")
 
 
+
+
         elif st.session_state.get('current_page') == "sponsorship1":#1:
             if st.button("Back", key="back_Q2"):
-                st.session_state['current_page'] = "commonwealth"
+                if st.session_state.get('prevAnswer')=="I have indefinite leave to remain (settlement)":
+                    st.session_state['current_page'] = "commonwealth"
+                elif st.session_state.get('prevAnswer')=="EEA national or family member with settled status in the UK": 
+                    st.session_state['current_page'] = "createPage2"
+                elif st.session_state.get('prevAnswer')=="National of any other country with indefinite leave to remain in the UK (Settlement)":
+                    st.session_state['current_page'] = "createPage2"
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             sponsorship1_value = sponsorship1.display()
@@ -668,9 +675,17 @@ def main():
                     st.rerun()
             info("sponsorship1")
 
+
+
+
         elif st.session_state.get('current_page') == "habitual1":#1:
             if st.button("Back", key="back_Q2"):
-                st.session_state['current_page'] = "sponsorship1"
+                if st.session_state.get('prevAnswer')=="I have right to abode in UK":
+                    st.session_state['current_page'] = "commonwealth"
+                elif st.session_state.get('prevAnswer')=="No":
+                    st.session_state['current_page'] = "sponsorship1"
+                elif st.session_state.get('prevAnswer')=="None of the above applies to me":
+                    st.session_state['current_page'] = "createPage4"
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             habitual1_value = habitual1.display()
@@ -686,6 +701,9 @@ def main():
                     st.session_state['current_page'] = "habitual2"
                     st.rerun()
             info("habitual1")
+
+
+
 
         elif st.session_state.get('current_page') == "habitual2":#1:
             if st.button("Back", key="back_Q2"):
@@ -708,7 +726,10 @@ def main():
 
         elif st.session_state.get('current_page') == "exemption1":#1:
             if st.button("Back", key="back_Q2"):
-                st.session_state['current_page'] = "habitual1"#0
+                if st.session_state.get('prevAnswer')=="Less than 5 years":
+                    st.session_state['current_page'] = "habitual4"#0
+                elif st.session_state.get('prevAnswer')=="Less than 2 years":
+                    st.session_state['current_page'] = "habitual2"
                 # st.session_state['current_page'] = "habitual4"#0todotodotodotodotodotodo
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
@@ -888,7 +909,10 @@ def main():
 
         elif st.session_state.get('current_page') == "habitual5":#1:#habitual9
             if st.button("Back", key="back_Q2"):
-                st.session_state['current_page'] = "createPage5"#0
+                if st.session_state.get('prevAnswer')=="Yes":
+                    st.session_state['current_page'] = "publicFunds1"#0
+                else:
+                    st.session_state['current_page'] = "createPage5"#0
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             habitual5_value = habitual5.display()
@@ -999,7 +1023,6 @@ def main():
         elif st.session_state.get('current_page') == "publicFunds2":#1:
             if st.button("Back", key="back_Q2"):
                 st.session_state['current_page'] = "createPage7"#0
-                # st.session_state['current_page'] = "habitual4"#0todotodotodotodotodotodo
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             publicFunds2_value = publicFunds2.display()
