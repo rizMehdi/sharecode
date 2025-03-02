@@ -415,7 +415,38 @@ def main():
             }}
             </style>
             """, unsafe_allow_html=True)
+
         
+        # Display questions based on the current page
+        if st.session_state.get('current_page') == "createPage0":#0:#createPage1
+            if st.button("Back", key="back_Q2"):
+                st.session_state['button_clicked'] = False
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            st.markdown(
+                """
+                **What you will do:** 
+                You will be asked a series of questions to assess your minimum eligibility for social housing assistance. 
+                - You can click on (>) under each question to see why a question is being asked.  
+                - For certain terms, additional information is available. Look under the questions for additional information.  
+
+                **Things you might need to complete this:**  
+                - An **email address** to get a one-time code.  
+                - Your **e-visa** or **biometric resident permit**, or any other document related to permission to stay in the UK, if you require such permission.
+                """
+                
+
+            )
+            # if verbose: st.write("createPage1_value", createPage1_value)
+            if st.button("Next", key="next_createPage1"):
+                st.session_state['current_page'] = "createPage1"#2
+                st.rerun()
+
+
+
+
+
+
         # Display questions based on the current page
         if st.session_state.get('current_page') == "createPage1":#0:#createPage1
             if st.button("Back", key="back_Q2"):
@@ -1004,7 +1035,7 @@ def main():
             st.image("img/IRESHAlogo.png", width=200)
             # st.header("Immigration/Residence Status Eligibility for Social Housing Assistance - Sharecode")
 
-            st.write("This webapp can be used to generate a sharecode indicating that you fulfil the minimum immigration/residence status eligibility requirements for social-housing assistance.")
+            st.write("This app can be used to generate a sharecode indicating that you fulfil the minimum immigration/residence status eligibility requirements for social-housing assistance.")
             
             # st.subheader("For applicants")
             # st.write("To create a sharecode, you will be asked a series of questions to check if you have the minimum eligibility for social-housing assistance.")
@@ -1018,11 +1049,11 @@ def main():
             st.write("For applicants:")
             if st.button("Check eligibility and create sharecode", key="check_eligibility"):
                 st.session_state['button_clicked'] = True
-                st.session_state['current_page'] = "createPage1"
+                st.session_state['current_page'] = "createPage0"
                 st.rerun()
             ChangeButtonColour('st-key-check_eligibility', 'white', 'green')
             
-            st.write("For housing officers or caseworkers:")
+            st.write("For housing officers or caseworkers:") 
             if st.button("Verify sharecode", key="verify_sharecode"):
                 st.session_state['button_clicked'] = True
                 st.session_state['current_page'] = "verifySharecode"
