@@ -60,11 +60,11 @@ def show(result):
             #### What to do next  
             If you are facing **homelessness,** need **urgent housing support,** or further **advice,** you can contact the following organizations:  
 
-            - **[Shelter England](https://england.shelter.org.uk/get_help)**
-            - **[Shelter Scotland](https://scotland.shelter.org.uk/about_us/contact_us)**
-            - **[Citizen Advice (England)](https://www.citizensadvice.org.uk/about-us/information/chat-with-an-adviser-online/)**
-            - **[Citizen Advice Scotland](https://www.citizensadvice.org.uk/scotland/housing/)**  
-
+    - <span style="font-size:16px;">🔗 <a href="https://england.shelter.org.uk/get_help" target="_blank">Shelter England</a> <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/open_in_new/v14/24px.svg" width="14"></span>  
+    - <span style="font-size:16px;">🔗 <a href="https://scotland.shelter.org.uk/about_us/contact_us" target="_blank">Shelter Scotland</a> <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/open_in_new/v14/24px.svg" width="14"></span>  
+    - <span style="font-size:16px;">🔗 <a href="https://www.citizensadvice.org.uk/about-us/information/chat-with-an-adviser-online/" target="_blank">Citizen Advice (England)</a> <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/open_in_new/v14/24px.svg" width="14"></span>  
+    - <span style="font-size:16px;">🔗 <a href="https://www.citizensadvice.org.uk/scotland/housing/" target="_blank">Citizen Advice Scotland</a> <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/open_in_new/v14/24px.svg" width="14"></span>  
+    """
             """)#, unsafe_allow_html=True)
 
     elif result == "result4":
