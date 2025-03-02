@@ -485,7 +485,7 @@ def main():
                 st.session_state['current_page'] = "createPage1"
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            createPage2 = createPage1.display()
+            createPage2 = createPage2.display()
             if createPage2=="EEA national with a presettled status in the UK": 
                 if st.button("Next", key="next_rejection1"):
                     st.session_state['current_page'] = "rejection1"#1
