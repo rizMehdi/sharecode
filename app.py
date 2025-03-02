@@ -425,11 +425,11 @@ def main():
         
         # Display questions based on the current page
         if st.session_state.get('current_page') == "createPage1":#0:#createPage1
-            if st.button("Back", key="back_Q2"):
-                # st.session_state['current_page'] = 0
-                st.session_state['button_clicked'] = True
-                st.rerun()
-            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            # if st.button("Back", key="back_Q2"):
+                # # st.session_state['current_page'] = 0
+                # st.session_state['button_clicked'] = True
+                # st.rerun()
+            # ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             createPage1_value = createPage1.display()
             # if verbose: st.write("createPage1_value", createPage1_value)
             if createPage1_value=="British Citizen" or createPage1_value=="Irish Citizen" or createPage1_value=="Diplomat or their family member based in the UK":
