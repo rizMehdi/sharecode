@@ -499,10 +499,9 @@ def main():
                 st.session_state['current_page'] = "verifySharecode"
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            st.write("Sharecode verification successful")
             st.success(
                 """
-                **Sharecode Verification Result**
-                ---
                 **Sharecode:** 3UB3C6CLY  
                 **It is valid until:** 2025-02-13  
                 **Name:** John Smith  
