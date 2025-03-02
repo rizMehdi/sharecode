@@ -316,7 +316,7 @@ def main():
                     st.rerun()
             elif createPage1_value=="None of the above": 
                 if st.button("Next", key="next_createPage2"):
-                    st.session_state['current_page'] = "createpage2"#3
+                    st.session_state['current_page'] = "createPage2"#3
                     st.rerun()
             info("createPage1")
 
@@ -357,7 +357,7 @@ def main():
 
         elif st.session_state.get('current_page') == "commonwealth":#1:
             if st.button("Back", key="back_Q2"):
-                st.session_state['current_page'] = "createpage1"#0
+                st.session_state['current_page'] = "createPage1"#0
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             commonwealth_value = commonwealth.display()
@@ -500,7 +500,7 @@ def main():
                     st.rerun()
             elif createPage2=="None of the above applies to me": 
                 if st.button("Next", key="next_createPage3"):
-                    st.session_state['current_page'] = "createpage3"#3
+                    st.session_state['current_page'] = "createPage3"#3
                     st.rerun()
             info("createPage2")
 
