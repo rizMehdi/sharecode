@@ -1,6 +1,7 @@
 import streamlit as st
 import streamlit.components.v1 as components
 import streamlit_survey as ss
+import datetime
 
 st.set_page_config(
     page_title="IRESHA Sharecode",
@@ -449,10 +450,42 @@ def main():
                 st.session_state['button_clicked'] = False
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            st.markdown(
-                """
-                This feature is disabled for now. Please go back to the previous page to continue."""
-            )
+            # st.markdown(
+            #     """
+            #     This feature is disabled for now. Please go back to the previous page to continue."""
+            # )
+
+            # Sharecode input
+            sharecode = st.text_input("Please enter the sharecode supplied by the applicant")
+
+            # Date of birth input in dd/mm/yyyy format
+            dob_str = st.text_input("Please enter the date of birth of the applicant (dd/mm/yyyy)")
+
+            # Check if the date of birth is valid
+            if dob_str:
+                try:
+                    # Try parsing the date input in dd/mm/yyyy format
+                    dob = datetime.strptime(dob_str, "%d/%m/%Y").date()
+                    
+                    # Check if the date of birth is in the future
+                    if dob > datetime.today().date():
+                        st.error("The date of birth cannot be in the future. Please enter a valid date.")
+                    else:
+                        # Calculate age
+                        age = datetime.today().year - dob.year
+                        if datetime.today().month < dob.month or (datetime.today().month == dob.month and datetime.today().day < dob.day):
+                            age -= 1  # Adjust age if the birthday hasn't occurred yet this year
+
+                        # Example: check if the applicant is at least 18 years old
+                        if age < 18:
+                            st.error("The applicant must be at least 18 years old.")
+                        else:
+                            st.success(f"The applicant is {age} years old. Verification can proceed.")
+                except ValueError:
+                    # Handle invalid date format
+                    st.error("Invalid date format. Please enter the date in dd/mm/yyyy format.")
+            else:
+                st.warning("Please enter the date of birth.")
 
 
         elif st.session_state.get('current_page') == "sharecode":#0:#createPage1
