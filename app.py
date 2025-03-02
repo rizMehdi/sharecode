@@ -219,7 +219,7 @@ def main():
     # verbose=False
     verbose=True
     if verbose: st.write(st.session_state.get('current_page', "start"))
-    if verbose: st.write("prevAnswer", st.session_state['prevAnswer'])
+    if verbose: st.write(st.session_state.get('prevAnswer', "None"))
     # Create a container to manage visibility of content
     content_container = st.container()
     
