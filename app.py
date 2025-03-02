@@ -732,13 +732,14 @@ def main():
                 st.rerun()
         
         elif st.session_state.get('current_page') == "result3":#1:
+            show("result3")
             if st.button("Back", key="back_Q2"):
                 st.session_state['current_page'] = "habitual9"
                 # st.session_state['current_page'] = "habitual1"tododododooddood
                 # st.session_state['current_page'] = "habitual3"toododoododoodod
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            show("result3")
+
             # if st.button("Create Sharecode", key="next_sharecode"):
             #     st.session_state['current_page'] = "sharecode"
             #     st.rerun()
