@@ -2,6 +2,12 @@ import streamlit as st
 import streamlit.components.v1 as components
 import streamlit_survey as ss
 
+st.set_page_config(
+    page_title="IRESHA Sharecode",
+    page_icon="🏠"
+)
+
+
 def ChangeButtonColour(button_key, font_color, background_color='transparent'):
     htmlstr = f"""
         <script>
