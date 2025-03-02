@@ -47,9 +47,7 @@ def show(result):
     elif result == "result3":
         st.info(
             """
-            #### Decision  
             **You do not meet the minimum requirements to be eligible for housing assistance.**  
-
             ---  
 
             #### What this means  
