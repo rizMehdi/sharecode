@@ -565,19 +565,19 @@ def main():
             if createPage1_value=="British Citizen" or createPage1_value=="Irish Citizen" or createPage1_value=="Diplomat or their family member based in the UK":
                 if st.button("Next", key="next_habitual9"):
                     st.session_state['prevAnswer'] = createPage1_value
-                    print(f"prevAnswer saved: {st.session_state['prevAnswer']}")
+                    st.write(f"prevAnswer saved: {st.session_state['prevAnswer']}")
                     st.session_state['current_page'] = "habitual9"#1
                     st.rerun()
             elif createPage1_value=="Commonwealth Citizen":  
                 if st.button("Next", key="next_commonwealth"):
                     st.session_state['prevAnswer'] = createPage1_value
-                    print(f"prevAnswer saved: {st.session_state['prevAnswer']}")
+                    st.write(f"prevAnswer saved: {st.session_state['prevAnswer']}")
                     st.session_state['current_page'] = "commonwealth"#2
                     st.rerun()
             elif createPage1_value=="None of the above": 
                 if st.button("Next", key="next_createPage2"):
                     st.session_state['prevAnswer'] = createPage1_value
-                    print(f"prevAnswer saved: {st.session_state['prevAnswer']}")
+                    st.write(f"prevAnswer saved: {st.session_state['prevAnswer']}")
                     st.session_state['current_page'] = "createPage2"#3
                     st.rerun()
             info("createPage1")
@@ -593,11 +593,13 @@ def main():
             if habitual9_value=="None of the above": 
                 if st.button("Next", key="next_result3"):
                     st.session_state['prevAnswer'] = habitual9_value
+                    st.write(f"prevAnswer saved: {st.session_state['prevAnswer']}")
                     st.session_state['current_page'] = "result3"
                     st.rerun()
             else:
                 if st.button("Next", key="next_habitual10"):
                     st.session_state['prevAnswer'] = habitual9_value
+                    st.write(f"prevAnswer saved: {st.session_state['prevAnswer']}")
                     st.session_state['current_page'] = "habitual10"
                     st.rerun()
             info("habitual9")
@@ -733,11 +735,13 @@ def main():
             if habitual3_value=="None of the above": 
                 if st.button("Next", key="next_result3"):
                     st.session_state['prevAnswer'] = habitual3_value
+                    st.write(f"prevAnswer saved: {st.session_state['prevAnswer']}")
                     st.session_state['current_page'] = "result3"
                     st.rerun()
             else:
                 if st.button("Next", key="next_habitual4"):
                     st.session_state['prevAnswer'] = habitual3_value
+                    st.write(f"prevAnswer saved: {st.session_state['prevAnswer']}")
                     st.session_state['current_page'] = "habitual4"
                     st.rerun()
             info("habitual3")            
@@ -772,21 +776,25 @@ def main():
             if createPage2_value=="EEA national with a presettled status in the UK": 
                 if st.button("Next", key="next_rejection1"):
                     st.session_state['prevAnswer'] = createPage2_value
+                    st.write(f"prevAnswer saved: {st.session_state['prevAnswer']}")
                     st.session_state['current_page'] = "rejection1"#1
                     st.rerun()
             elif createPage2_value=="EEA national or family member with settled status in the UK":  
                 if st.button("Next", key="next_sponsorship1"):
                     st.session_state['prevAnswer'] = createPage2_value
+                    st.write(f"prevAnswer saved: {st.session_state['prevAnswer']}")
                     st.session_state['current_page'] = "sponsorship1"#2
                     st.rerun()
             elif createPage2_value=="National of any other country with indefinite leave to remain in the UK (Settlement)":  
                 if st.button("Next", key="next_sponsorship1"):
                     st.session_state['prevAnswer'] = createPage2_value
+                    st.write(f"prevAnswer saved: {st.session_state['prevAnswer']}")
                     st.session_state['current_page'] = "sponsorship1"#2
                     st.rerun()
             elif createPage2_value=="None of the above applies to me": 
                 if st.button("Next", key="next_createPage3"):
                     st.session_state['prevAnswer'] = createPage2_value
+                    st.write(f"prevAnswer saved: {st.session_state['prevAnswer']}")
                     st.session_state['current_page'] = "createPage3"#3
                     st.rerun()
             info("createPage2")
