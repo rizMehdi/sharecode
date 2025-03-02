@@ -706,11 +706,12 @@ def main():
 
 
         elif st.session_state.get('current_page') == "habitual2":#1:
-            st.write("You said you live in" + st.session_state.get('prevAnswer'))
+            
             if st.button("Back", key="back_Q2"):
                 st.session_state['current_page'] = "habitual1"
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            st.write("You said you live in" + st.session_state.get('prevAnswer'))
             habitual2_value = habitual2.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
             if habitual2_value=="Less than 2 years": 
