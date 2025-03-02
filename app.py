@@ -41,7 +41,25 @@ def info(question_number):
 
 def show(result):
     if result == "result1":
-        st.write("You need to have already resided in UK/RoI/IoM/CI for at least 2 years.  However, there might be some exceptions. A case worker might be able to assess this further.")
+        # st.write("You need to have already resided in UK/RoI/IoM/CI for at least 2 years.  However, there might be some exceptions. A case worker might be able to assess this further.")
+        st.warning(
+    """
+    You have been referred to a case worker.  
+
+    #### What this means  
+    You need to have already resided in the **United Kingdom, Republic of Ireland, Isle of Man,** or **Channel Islands** for at least **two continuous years**. However, there may be exceptions, and a case worker will assess your situation further.  
+
+    #### What to do next  
+    You can still create a **sharecode**, but you may need to answer additional questions or provide further documents to help the case worker determine your eligibility for social housing. After creating the sharecode, please contact your potential housing provider directly.  
+
+    You can also seek advice from the following organisations:  
+
+    - **[Shelter England](https://england.shelter.org.uk/get_help)**
+    - **[Shelter Scotland](https://scotland.shelter.org.uk/about_us/contact_us)**
+    - **[Citizen Advice (England)](https://www.citizensadvice.org.uk/about-us/information/chat-with-an-adviser-online/)**
+    - **[Citizen Advice Scotland](https://www.citizensadvice.org.uk/scotland/housing/)**  
+    """
+)
     elif result == "result2":
         st.write("")
     elif result == "result3":
