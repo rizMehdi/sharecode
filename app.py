@@ -46,25 +46,21 @@ def show(result):
         st.write("")
     elif result == "result3":
         st.info(
-            """
-            #### 
-            You do not meet the minimum requirements to be eligible for housing assistance. 
-            ---  
+    """
+    You do not meet the minimum requirements to be eligible for housing assistance.  
 
-            #### What this means  
-            You can only apply for housing assistance if you currently live in the **United Kingdom, Republic of Ireland, Isle of Man,** or **Channel Islands**.  
+    #### What this means  
+    You can only apply for housing assistance if you currently live in the **United Kingdom, Republic of Ireland, Isle of Man,** or **Channel Islands**.  
 
-            ---  
+    #### What to do next  
+    If you are facing **homelessness,** need **urgent housing support,** or further **advice,** you can contact the following organisations:  
 
-            #### What to do next  
-            If you are facing **homelessness,** need **urgent housing support,** or further **advice,** you can contact the following organizations:  
-
-            - **[Shelter England](https://england.shelter.org.uk/get_help)**
-            - **[Shelter Scotland](https://scotland.shelter.org.uk/about_us/contact_us)**
-            - **[Citizen Advice (England)](https://www.citizensadvice.org.uk/about-us/information/chat-with-an-adviser-online/)**
-            - **[Citizen Advice Scotland](https://www.citizensadvice.org.uk/scotland/housing/)**  
-
-            """)#, unsafe_allow_html=True)
+    - **[Shelter England](https://england.shelter.org.uk/get_help)**
+    - **[Shelter Scotland](https://scotland.shelter.org.uk/about_us/contact_us)**
+    - **[Citizen Advice (England)](https://www.citizensadvice.org.uk/about-us/information/chat-with-an-adviser-online/)**
+    - **[Citizen Advice Scotland](https://www.citizensadvice.org.uk/scotland/housing/)**  
+    """
+)
 
     elif result == "result4":
         st.write("")
