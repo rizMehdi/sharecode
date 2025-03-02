@@ -480,8 +480,8 @@ def main():
                         # Example: check if the applicant is at least 18 years old
                         if age < 18:
                             st.error("The applicant must be at least 18 years old.")
-                        else:
-                            st.success(f"The applicant is {age} years old. Verification can proceed.")
+                        # else:
+                        #     st.success(f"The applicant is {age} years old. Verification can proceed.")
                 except ValueError:
                     # Handle invalid date format
                     st.error("Invalid date format. Please enter the date in dd/mm/yyyy format.")
@@ -489,10 +489,41 @@ def main():
                 st.warning("Please enter the date of birth.")
             if st.button("Submit", key="submit_sharecode"):
                 st.session_state['button_clicked'] = True
-                st.session_state['current_page'] = "sharecodeResult"#0
+                st.session_state['current_page'] = "sharecodeResult_No"#0
                 st.rerun()
             ChangeButtonColour('st-key-check_eligibility', 'white', 'green')
 
+
+        elif st.session_state.get('current_page') == "sharecodeResult_Yes":#0:#createPage1
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "verifySharecode"
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            st.success(
+                """
+                # Sharecode Verification Result
+                
+                **Sharecode:** 3UB3C6CLY  
+                **It is valid until:** 2025-02-13  
+                **Name:** John Smith  
+                **Status:** The applicant fulfils the minimum eligibility requirements for social-housing assistance.
+                """
+            )
+
+
+
+        elif st.session_state.get('current_page') == "sharecodeResult_No":#0:#createPage1
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "verifySharecode"
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            st.error(
+                """
+                # Sorry, we are unable to verify the sharecode which you gave us.
+                
+                Please make sure that the sharecode and the date of birth of the applicant are typed in correctly.
+                """
+            )
 
         elif st.session_state.get('current_page') == "sharecode":#0:#createPage1
             if st.button("Back", key="back_Q2"):
