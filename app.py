@@ -40,7 +40,7 @@ def info(question_number):
     
 
 def show(result):
-    if result == "result1":
+    if result == "result1" or result == "result5" or result == "result11":
         # st.write("You need to have already resided in UK/RoI/IoM/CI for at least 2 years.  However, there might be some exceptions. A case worker might be able to assess this further.")
         st.warning(
     """
@@ -60,9 +60,19 @@ def show(result):
     - **[Citizen Advice Scotland](https://www.citizensadvice.org.uk/scotland/housing/)**  
     """
 )
-    elif result == "result2":
-        st.write("")
-    elif result == "result3":
+    elif result == "result2" or result == "result4" or result == "result7" or result == "result10" or result == "result15":
+        st.success(
+    """
+    You fulfil the minimum eligibility requirements for social-housing assistance  
+
+    #### What this means?  
+    Based on your answers, you fulfil the minimum eligibility requirements for seeking social-housing assistance. Please note that there might be additional requirements that you may need to fulfil, depending on where you live or where you want to apply for social housing.  
+
+    #### What to do next?  
+    You can go ahead and create a **sharecode**. This sharecode can be shared with your housing association or local authority.  
+    """
+)
+    elif result == "result3" or result == "result12":
         st.info(
     """
     You do not meet the minimum requirements to be eligible for housing assistance.  
@@ -80,32 +90,133 @@ def show(result):
     """
 )
 
-    elif result == "result4":
-        st.write("")
-    elif result == "result5":
-        st.write("")
+    # elif result == "result4":
+    #     st.write("")
+    # elif result == "result5":
+    #     st.write("")
     elif result == "result6":
-        st.write("")
-    elif result == "result7":
-        st.write("")
+        st.info(
+    """
+    You do not meet the minimum requirements to be eligible for housing assistance at the moment.  
+
+    #### What this means?  
+    You cannot apply for social housing if you are a **Commonwealth citizen** but do not have **Indefinite Leave to Remain (ILR)** or the **right to reside** in the UK. For more information, please check section 7.14 of the **Homelessness Code of Guidance for Local Authorities** here: [Homelessness Code of Guidance](https://www.gov.uk/guidance/homelessness-code-of-guidance-for-local-authorities/chapter-7-eligibility-for-assistance).  
+
+    #### What to do next?  
+    You can wait until you have **Indefinite Leave to Remain (ILR)** or settlement and apply afterward.  
+
+    If you are facing **homelessness**, need **urgent housing support**, or need further **advice**, you can contact the following organisations:  
+
+    - **[Shelter England](https://england.shelter.org.uk/get_help)**  
+    - **[Shelter Scotland](https://scotland.shelter.org.uk/about_us/contact_us)**  
+    - **[Citizen Advice (England)](https://www.citizensadvice.org.uk/about-us/information/chat-with-an-adviser-online/)**  
+    - **[Citizen Advice Scotland](https://www.citizensadvice.org.uk/scotland/housing/)**
+    """
+)
+    # elif result == "result7":
+        # st.write("")
     elif result == "result8":
-        st.write("")
+        st.info(
+    """
+    You do not meet the minimum requirements to be eligible for housing assistance at the moment.  
+
+    #### What this means?  
+    As an **EEA national** with **pre-settled status** in the UK, you cannot apply for social housing if:  
+    - Your right to reside in the UK is only due to your **jobseeker status**, or  
+    - You only have an **initial right to reside** in the UK.  
+
+    #### What to do next?  
+    If you are facing **homelessness**, need **urgent housing support**, or need further **advice**, you can contact the following organisations:  
+
+    - **[Shelter England](https://england.shelter.org.uk/get_help)**  
+    - **[Shelter Scotland](https://scotland.shelter.org.uk/about_us/contact_us)**  
+    - **[Citizen Advice (England)](https://www.citizensadvice.org.uk/about-us/information/chat-with-an-adviser-online/)**  
+    - **[Citizen Advice Scotland](https://www.citizensadvice.org.uk/scotland/housing/)**
+    """
+)
     elif result == "result9":
-        st.write("")
-    elif result == "result10":
-        st.write("")
-    elif result == "result11":
-        st.write("")
-    elif result == "result12":
-        st.write("")
+        st.info(
+    """
+    You do not meet the minimum requirements to be eligible for housing assistance at the moment.  
+
+    #### What this means?  
+    You cannot apply for social housing if you are a person or dependent of a person who:  
+    - Has **refugee status** abroad  
+    - Is a **former asylum seeker** who has been instructed to move but failed to do so (failed asylum seeker)  
+    - Is in the UK in **breach of UK immigration laws**  
+    - Is a **failed asylum seeker** with dependent children  
+
+    #### What to do next?  
+    If you are facing **homelessness**, need **urgent housing support**, or need further **advice**, you can contact the following organisations:  
+
+    - **[Shelter England](https://england.shelter.org.uk/get_help)**  
+    - **[Shelter Scotland](https://scotland.shelter.org.uk/about_us/contact_us)**  
+    - **[Citizen Advice (England)](https://www.citizensadvice.org.uk/about-us/information/chat-with-an-adviser-online/)**  
+    - **[Citizen Advice Scotland](https://www.citizensadvice.org.uk/scotland/housing/)**
+    """
+)
+    # elif result == "result10":
+    #     st.write("")
+    # elif result == "result11":
+    #     st.write("")
+    # elif result == "result12":
+    #     st.write("")
     elif result == "result13":
-        st.write("")
+        st.info(
+    """
+    You do not meet the minimum requirements to be eligible for housing assistance at the moment.  
+
+    #### What this means?  
+    You cannot apply for social housing if you do not have access to **public funds** while on a **British National Overseas (BNO) visa**. However, you may be able to apply for a **"change of conditions"** to access public funds if you meet certain criteria.  
+
+    Please see the highlighted text on this website:  
+    [Public Funds Access](https://www.gov.uk/government/publications/public-funds/public-funds-accessible#:~:text=For%20this%20reason%2C%20the%20majority,affecting%20their%20income%20or%20expenditure).  
+
+    #### What to do next?  
+    If you are facing **homelessness**, need **urgent housing support**, or need further **advice**, you can contact the following organisations:  
+
+    - **[Shelter England](https://england.shelter.org.uk/get_help)**  
+    - **[Shelter Scotland](https://scotland.shelter.org.uk/about_us/contact_us)**  
+    - **[Citizen Advice (England)](https://www.citizensadvice.org.uk/about-us/information/chat-with-an-adviser-online/)**  
+    - **[Citizen Advice Scotland](https://www.citizensadvice.org.uk/scotland/housing/)**
+    """
+)
     elif result == "result14":
-        st.write("")
-    elif result == "result15":
-        st.write("")
+        st.info(
+    """
+    You do not meet the minimum requirements to be eligible for housing assistance at the moment.  
+
+    #### What this means?  
+    You cannot apply for social housing if you do not have access to **public funds** while on a **British National Overseas (BNO) visa**. However, you may be able to apply for a **"change of conditions"** to access public funds if you meet certain criteria.  
+
+    Please see the highlighted text on this website:  
+    [Public Funds Access](https://www.gov.uk/government/publications/public-funds/public-funds-accessible#:~:text=For%20this%20reason%2C%20the%20majority,affecting%20their%20income%20or%20expenditure).  
+
+    #### What to do next?  
+    If you are facing **homelessness**, need **urgent housing support**, or need further **advice**, you can contact the following organisations:  
+
+    - **[Shelter England](https://england.shelter.org.uk/get_help)**  
+    - **[Shelter Scotland](https://scotland.shelter.org.uk/about_us/contact_us)**  
+    - **[Citizen Advice (England)](https://www.citizensadvice.org.uk/about-us/information/chat-with-an-adviser-online/)**  
+    - **[Citizen Advice Scotland](https://www.citizensadvice.org.uk/scotland/housing/)**
+    """
+)
+    # elif result == "result15":
+    #     st.write("")
     elif result == "result16":
-        st.write("")   
+        st.info(
+    """
+    You do not meet the minimum requirements to be eligible for housing assistance at the moment.  
+
+    #### What to do next?  
+    If you are facing **homelessness**, need **urgent housing support**, or need further **advice**, you can contact the following organisations:  
+
+    - **[Shelter England](https://england.shelter.org.uk/get_help)**  
+    - **[Shelter Scotland](https://scotland.shelter.org.uk/about_us/contact_us)**  
+    - **[Citizen Advice (England)](https://www.citizensadvice.org.uk/about-us/information/chat-with-an-adviser-online/)**  
+    - **[Citizen Advice Scotland](https://www.citizensadvice.org.uk/scotland/housing/)**
+    """
+)   
     else:
         st.write("Unknown state. Please resert the app")     
 
