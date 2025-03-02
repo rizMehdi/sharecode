@@ -1001,7 +1001,7 @@ def main():
     else:
         with content_container:
             # st.title("IRESHA Sharecode")
-            st.image("img/partnerLogos.png", width=250)
+            st.image("img/partnerLogos.png", width=300)
             st.image("img/IRESHAlogo.png", width=200)
             # st.header("Immigration/Residence Status Eligibility for Social Housing Assistance - Sharecode")
 
