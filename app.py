@@ -64,7 +64,7 @@ def show(result):
     - <span style="font-size:16px;">🔗 <a href="https://scotland.shelter.org.uk/about_us/contact_us" target="_blank">Shelter Scotland</a> <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/open_in_new/v14/24px.svg" width="14"></span>  
     - <span style="font-size:16px;">🔗 <a href="https://www.citizensadvice.org.uk/about-us/information/chat-with-an-adviser-online/" target="_blank">Citizen Advice (England)</a> <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/open_in_new/v14/24px.svg" width="14"></span>  
     - <span style="font-size:16px;">🔗 <a href="https://www.citizensadvice.org.uk/scotland/housing/" target="_blank">Citizen Advice Scotland</a> <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/open_in_new/v14/24px.svg" width="14"></span>  
-    """
+
             """)#, unsafe_allow_html=True)
 
     elif result == "result4":
