@@ -38,6 +38,44 @@ def info(question_number):
         with st.expander("Who is a Commonwealth Citizen?"):
             st.write("A Commonwealth citizen is a citizen of a Commonwealth of Nations member state. Check here if your conuntry is a commonwealth member https://thecommonwealth.org/our-member-countries")
     
+
+def show(result):
+    if result == "result1":
+        st.write("You need to have already resided in UK/RoI/IoM/CI for at least 2 years.  However, there might be some exceptions. A case worker might be able to assess this further.")
+    elif result == "result2":
+        st.write("")
+    elif result == "result3":
+        st.write("")
+    elif result == "result4":
+        st.write("")
+    elif result == "result5":
+        st.write("")
+    elif result == "result6":
+        st.write("")
+    elif result == "result7":
+        st.write("")
+    elif result == "result8":
+        st.write("")
+    elif result == "result9":
+        st.write("")
+    elif result == "result10":
+        st.write("")
+    elif result == "result11":
+        st.write("")
+    elif result == "result12":
+        st.write("")
+    elif result == "result13":
+        st.write("")
+    elif result == "result14":
+        st.write("")
+    elif result == "result15":
+        st.write("")
+    elif result == "result16":
+        st.write("")   
+    else:
+        st.write("Unknown state. Please resert the app")     
+
+
 def main():
     verbose=True
     if verbose: st.write(st.session_state.get('current_page', "start"))
@@ -652,6 +690,176 @@ def main():
                     st.session_state['current_page'] = "result14"
                     st.rerun()
             info("publicFunds2")  
+
+
+
+
+
+        elif st.session_state.get('current_page') == "result1":#1:
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "habitual10"
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            show("result1")
+            if st.button("Create Sharecode", key="next_sharecode"):
+                st.session_state['current_page'] = "sharecode"
+                st.rerun()
+
+        elif st.session_state.get('current_page') == "result2":#1:
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "habitual10"
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            show("result2")
+            if st.button("Create Sharecode", key="next_sharecode"):
+                st.session_state['current_page'] = "sharecode"
+                st.rerun()
+        
+        elif st.session_state.get('current_page') == "result3":#1:
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "habitual9"
+                # st.session_state['current_page'] = "habitual1"tododododooddood
+                # st.session_state['current_page'] = "habitual3"toododoododoodod
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            show("result3")
+            # if st.button("Create Sharecode", key="next_sharecode"):
+            #     st.session_state['current_page'] = "sharecode"
+            #     st.rerun()
+        
+        elif st.session_state.get('current_page') == "result4":#1:
+            if st.button("Back", key="back_Q2"):
+                st.session_state['current_page'] = "habitual2"
+                # st.session_state['current_page'] = "exemption1"tododododooddood
+                # st.session_state['current_page'] = "habitual4"toododoododoodod
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            show("result4")
+            if st.button("Create Sharecode", key="next_sharecode"):
+                st.session_state['current_page'] = "sharecode"
+                st.rerun()
+        
+        elif st.session_state.get('current_page') == "result5":#1:
+            if st.button("Back", key="back_Q2"): 
+                st.session_state['current_page'] = "exemption1" 
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            show("result5")
+            if st.button("Create Sharecode", key="next_sharecode"):
+                st.session_state['current_page'] = "sharecode"
+                st.rerun()
+
+                
+        elif st.session_state.get('current_page') == "result6":#1:
+            if st.button("Back", key="back_Q2"): 
+                st.session_state['current_page'] = "commonwealth" 
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            show("result6")
+            # if st.button("Create Sharecode", key="next_sharecode"):
+            #     st.session_state['current_page'] = "sharecode"
+            #     st.rerun()
+        
+        elif st.session_state.get('current_page') == "result7":#1:
+            if st.button("Back", key="back_Q2"): 
+                st.session_state['current_page'] = "createPage4" 
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            show("result7")
+            if st.button("Create Sharecode", key="next_sharecode"):
+                st.session_state['current_page'] = "sharecode"
+                st.rerun()
+
+                
+        elif st.session_state.get('current_page') == "result8":#1:
+            if st.button("Back", key="back_Q2"): 
+                st.session_state['current_page'] = "rejection1" 
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            show("result8")
+            # if st.button("Create Sharecode", key="next_sharecode"):
+            #     st.session_state['current_page'] = "sharecode"
+            #     st.rerun()    
+                        
+        elif st.session_state.get('current_page') == "result9":#1:
+            if st.button("Back", key="back_Q2"): 
+                st.session_state['current_page'] = "createPage3" 
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            show("result9")
+            # if st.button("Create Sharecode", key="next_sharecode"):
+            #     st.session_state['current_page'] = "sharecode"
+            #     st.rerun()
+        
+        elif st.session_state.get('current_page') == "result10":#1:
+            if st.button("Back", key="back_Q2"): 
+                st.session_state['current_page'] = "habitual6" 
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            show("result10")
+            if st.button("Create Sharecode", key="next_sharecode"):
+                st.session_state['current_page'] = "sharecode"
+                st.rerun()
+        
+        elif st.session_state.get('current_page') == "result11":#1:
+            if st.button("Back", key="back_Q2"): 
+                st.session_state['current_page'] = "habitual6" 
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            show("result11")
+            if st.button("Create Sharecode", key="next_sharecode"):
+                st.session_state['current_page'] = "sharecode"
+                st.rerun()
+                        
+        elif st.session_state.get('current_page') == "result12":#1:
+            if st.button("Back", key="back_Q2"): 
+                st.session_state['current_page'] = "habitual5" 
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            show("result12")
+            # if st.button("Create Sharecode", key="next_sharecode"):
+            #     st.session_state['current_page'] = "sharecode"
+            #     st.rerun()
+                        
+        elif st.session_state.get('current_page') == "result13":#1:
+            if st.button("Back", key="back_Q2"): 
+                st.session_state['current_page'] = "publicFunds1" 
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            show("result13")
+            # if st.button("Create Sharecode", key="next_sharecode"):
+            #     st.session_state['current_page'] = "sharecode"
+            #     st.rerun()
+                        
+        elif st.session_state.get('current_page') == "result14":#1:
+            if st.button("Back", key="back_Q2"): 
+                st.session_state['current_page'] = "publicFunds2" 
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            show("result14")
+            # if st.button("Create Sharecode", key="next_sharecode"):
+            #     st.session_state['current_page'] = "sharecode"
+            #     st.rerun()
+                        
+        elif st.session_state.get('current_page') == "result15":#1:
+            if st.button("Back", key="back_Q2"): 
+                st.session_state['current_page'] = "publicFunds2" 
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            show("result15")
+            if st.button("Create Sharecode", key="next_sharecode"):
+                st.session_state['current_page'] = "sharecode"
+                st.rerun()
+                        
+        elif st.session_state.get('current_page') == "result16":#1:
+            if st.button("Back", key="back_Q2"): 
+                st.session_state['current_page'] = "createPage7" 
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            show("result16")
+            # if st.button("Create Sharecode", key="next_sharecode"):
+            #     st.session_state['current_page'] = "sharecode"
+            #     st.rerun()
 
     else:
         with content_container:
