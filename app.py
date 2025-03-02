@@ -222,8 +222,8 @@ def main():
     if 'prevAnswer' not in st.session_state:
         st.session_state['prevAnswer'] = "None"
     st.logo("img/IRESHAwide.png")
-    verbose=False
-    # verbose=True
+    # verbose=False
+    verbose=True
     # if verbose: st.write(st.session_state.get('current_page', "start"))
     # if verbose: st.write(st.session_state.get('prevAnswer', "None"))
     # Create a container to manage visibility of content
@@ -727,10 +727,9 @@ def main():
         elif st.session_state.get('current_page') == "exemption1":#1:
             if st.button("Back", key="back_Q2"):
                 if st.session_state.get('prevAnswer')=="Less than 5 years":
-                    st.session_state['current_page'] = "habitual4"#0
+                    st.session_state['current_page'] = "habitual4"
                 elif st.session_state.get('prevAnswer')=="Less than 2 years":
                     st.session_state['current_page'] = "habitual2"
-                # st.session_state['current_page'] = "habitual4"#0todotodotodotodotodotodo
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             exemption1_value = exemption1.display()
@@ -910,9 +909,9 @@ def main():
         elif st.session_state.get('current_page') == "habitual5":#1:#habitual9
             if st.button("Back", key="back_Q2"):
                 if st.session_state.get('prevAnswer')=="Yes":
-                    st.session_state['current_page'] = "publicFunds1"#0
+                    st.session_state['current_page'] = "publicFunds1"
                 else:
-                    st.session_state['current_page'] = "createPage5"#0
+                    st.session_state['current_page'] = "createPage5"
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             habitual5_value = habitual5.display()
