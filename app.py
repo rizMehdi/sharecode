@@ -435,8 +435,6 @@ def main():
                 - An **email address** to get a one-time code.  
                 - Your **e-visa** or **biometric resident permit**, or any other document related to permission to stay in the UK, if you require such permission.
                 """
-                
-
             )
             # if verbose: st.write("createPage1_value", createPage1_value)
             if st.button("Next", key="next_createPage1"):
@@ -444,12 +442,20 @@ def main():
                 st.rerun()
 
 
-
+        elif st.session_state.get('current_page') == "verify_sharecode":#0:#createPage1
+            if st.button("Back", key="back_Q2"):
+                st.session_state['button_clicked'] = False
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            st.markdown(
+                """
+                This feature is disabled for now. Please go back to the previous page to continue."""
+            )
 
 
 
         # Display questions based on the current page
-        if st.session_state.get('current_page') == "createPage1":#0:#createPage1
+        elif st.session_state.get('current_page') == "createPage1":#0:#createPage1
             if st.button("Back", key="back_Q2"):
                 # st.session_state['button_clicked'] = False
                 st.session_state['current_page'] = "createPage0"#0
