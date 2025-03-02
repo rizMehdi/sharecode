@@ -221,7 +221,7 @@ def show(result):
 def main():
     st.session_state['prevAnswer']="None"
     st.logo("img/IRESHAwide.png")
-    st.write(st.session_state.get('prevAnswer', "None"))
+    st.write(st.session_state.get('prevAnswer'))
     # verbose=False
     # # verbose=True
     # if verbose: st.write(st.session_state.get('current_page', "start"))
