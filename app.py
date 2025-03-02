@@ -449,7 +449,8 @@ def main():
         # Display questions based on the current page
         if st.session_state.get('current_page') == "createPage1":#0:#createPage1
             if st.button("Back", key="back_Q2"):
-                st.session_state['button_clicked'] = False
+                # st.session_state['button_clicked'] = False
+                st.session_state['current_page'] = "createPage0"#0
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             createPage1_value = createPage1.display()
