@@ -212,9 +212,10 @@ def show(result):
 
 
 def main():
-    verbose=True
+    
     st.logo("img/IRESHAwide.png")
-    # verbose=False
+    verbose=False
+    # verbose=True
     if verbose: st.write(st.session_state.get('current_page', "start"))
     # Create a container to manage visibility of content
     content_container = st.container()
