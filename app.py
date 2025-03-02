@@ -433,7 +433,7 @@ def main():
                 - Under each question, you can click to see why that question is being asked.  
                 - For certain terms, additional information is available. Look under the questions for additional information.  
 
-                **Things you might need to complete this:**  
+                **Things you will need:**  
                 - An **email address** to get a one-time code.  
                 - Your **e-visa** or **biometric resident permit**, or any other document related to permission to stay in the UK, if you require such permission.
                 """
@@ -454,6 +454,28 @@ def main():
                 This feature is disabled for now. Please go back to the previous page to continue."""
             )
 
+
+        elif st.session_state.get('current_page') == "sharecode":#0:#createPage1
+            if st.button("Back", key="back_Q2"):
+                # st.session_state['button_clicked'] = False
+                st.session_state['current_page'] = "habitual10"#0
+                # st.session_state['current_page'] = "habitual2"#0
+                # st.session_state['current_page'] = "exemption1"#0
+                # st.session_state['current_page'] = "createPage4"#0
+                # st.session_state['current_page'] = "habitual6"#0
+                # st.session_state['current_page'] = "publicFunds2"#0
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            # st.markdown(
+            #     """
+            #     This feature is disabled for now. Please go back to the previous page to continue."""
+            # )
+            # Title or header
+            st.subheader("Enter your information")
+            # First name input
+            st.text_input("What is your first name?", "This should be the same as on your identity document.")
+            # Last name input
+            st.text_input("What is your last name?", "This should be the same as on your identity document.")
 
 
         # Display questions based on the current page
