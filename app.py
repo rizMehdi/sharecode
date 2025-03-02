@@ -610,6 +610,7 @@ def main():
                 st.session_state['current_page'] = "habitual9"#0
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            st.write("You said you live in the " + st.session_state.get('prevAnswer'))
             habitual10_value = habitual10.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
             if habitual10_value=="Less than 2 years": 
@@ -711,7 +712,7 @@ def main():
                 st.session_state['current_page'] = "habitual1"
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            st.write("You said you live in" + st.session_state.get('prevAnswer'))
+            st.write("You said you live in the " + st.session_state.get('prevAnswer'))
             habitual2_value = habitual2.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
             if habitual2_value=="Less than 2 years": 
@@ -775,6 +776,7 @@ def main():
                 st.session_state['current_page'] = "habitual3"#0
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            st.write("You said you live in the " + st.session_state.get('prevAnswer'))
             habitual4_value = habitual4.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
             if habitual4_value=="Less than 5 years": 
@@ -938,6 +940,7 @@ def main():
                 st.session_state['current_page'] = "habitual5"#0
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            st.write("You said you live in the " + st.session_state.get('prevAnswer'))
             habitual6_value = habitual6.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
             if habitual6_value=="Less than 2 years": 
