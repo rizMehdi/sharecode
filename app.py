@@ -1,7 +1,8 @@
 import streamlit as st
 import streamlit.components.v1 as components
 import streamlit_survey as ss
-import datetime
+from datetime import datetime
+
 
 st.set_page_config(
     page_title="IRESHA Sharecode",
