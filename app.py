@@ -226,12 +226,13 @@ def main():
     if verbose: st.write(st.session_state.get('current_page', "start"))
     # Create a container to manage visibility of content
     content_container = st.container()
-    st.image("img/IRESHAwide.png", width=200)
+    
     
     # Set text size
     text_size = "16px"
     
     if st.session_state.get('button_clicked', False):
+        st.image("img/IRESHAwide.png", width=200)
         # Clear the previous content
         content_container.empty()
         
@@ -239,27 +240,6 @@ def main():
         survey = ss.StreamlitSurvey("IRESHA Sharecode")
         # st.session_state['current_page'] = "createPage1"
         # Define questions
-        Q1 = ss.Radio(survey, "Are you any of the following? (old)", options=[
-            "British Citizen",
-            "Irish Citizen",
-            "Commonwealth Citizen",
-            "Diplomat or their family member based in the UK",
-            "None of the above"
-        ], horizontal=False, key="Q1")
-
-        Q2 = ss.Radio(survey, "Where do you currently live?", options=[
-            "UK",
-            "Republic of Ireland",
-            "Isle of Man",
-            "Channel Islands",
-            "None of the above"
-        ], horizontal=False, key="Q2")
-
-        Q3 = ss.Radio(survey, "Since how long have you been residing in your current place of residence?", options=[
-            "Less than 2 years",
-            "2 years or more"
-        ], horizontal=False, key="Q3")
-
         createPage1 = ss.Radio(survey, "Are you any of the following?", options=[
             "British Citizen",
             "Irish Citizen",
