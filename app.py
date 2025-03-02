@@ -4,7 +4,8 @@ import streamlit_survey as ss
 
 st.set_page_config(
     page_title="IRESHA Sharecode",
-    page_icon="🏠"
+    # page_icon="🏠"
+    page_icon="/img/favicon.png"
 )
 
 
