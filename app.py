@@ -442,7 +442,7 @@ def main():
                 st.rerun()
 
 
-        elif st.session_state.get('current_page') == "verify_sharecode":#0:#createPage1
+        elif st.session_state.get('current_page') == "verifySharecode":#0:#createPage1
             if st.button("Back", key="back_Q2"):
                 st.session_state['button_clicked'] = False
                 st.rerun()
