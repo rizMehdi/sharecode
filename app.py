@@ -663,12 +663,12 @@ def main():
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             sponsorship1_value = sponsorship1.display()
             if verbose: st.write(st.session_state.get('prevAnswer'))
-            if sponsorship1_value=="Yes": 
+            if sponsorship1_value=="No": 
                 if st.button("Next", key="next_habitual1"):
                     st.session_state['prevAnswer'] = sponsorship1_value
                     st.session_state['current_page'] = "habitual1"
                     st.rerun()
-            elif sponsorship1_value=="No": 
+            elif sponsorship1_value=="Yes": 
                 if st.button("Next", key="next_habitual3"):
                     st.session_state['prevAnswer'] = sponsorship1_value
                     st.session_state['current_page'] = "habitual3"
