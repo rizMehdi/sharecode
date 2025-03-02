@@ -501,8 +501,8 @@ def main():
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             st.success(
                 """
-                # Sharecode Verification Result
-                
+                **Sharecode Verification Result**
+                ---
                 **Sharecode:** 3UB3C6CLY  
                 **It is valid until:** 2025-02-13  
                 **Name:** John Smith  
