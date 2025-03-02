@@ -65,9 +65,8 @@ def show(result):
             - **[Citizen Advice (England)](https://www.citizensadvice.org.uk/about-us/information/chat-with-an-adviser-online/)**
             - **[Citizen Advice Scotland](https://www.citizensadvice.org.uk/scotland/housing/)**  
 
-            """,
-            unsafe_allow_html=True
-        )
+            """)#, unsafe_allow_html=True)
+
     elif result == "result4":
         st.write("")
     elif result == "result5":
