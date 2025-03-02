@@ -561,7 +561,7 @@ def main():
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             createPage1_value = createPage1.display()
-            if verbose: st.write(st.session_state.get('prevAnswer'))
+            st.write(f"Current prevAnswer: {st.session_state.get('prevAnswer')}")
             if createPage1_value=="British Citizen" or createPage1_value=="Irish Citizen" or createPage1_value=="Diplomat or their family member based in the UK":
                 if st.button("Next", key="next_habitual9"):
                     st.session_state['prevAnswer'] = createPage1_value
@@ -589,7 +589,7 @@ def main():
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             habitual9_value = habitual9.display()
-            if verbose: st.write(st.session_state.get('prevAnswer'))
+            st.write(f"Current prevAnswer: {st.session_state.get('prevAnswer')}")
             if habitual9_value=="None of the above": 
                 if st.button("Next", key="next_result3"):
                     st.session_state['prevAnswer'] = habitual9_value
@@ -731,7 +731,7 @@ def main():
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             habitual3_value = habitual3.display()
-            if verbose: st.write(st.session_state.get('prevAnswer'))
+            st.write(f"Current prevAnswer: {st.session_state.get('prevAnswer')}")
             if habitual3_value=="None of the above": 
                 if st.button("Next", key="next_result3"):
                     st.session_state['prevAnswer'] = habitual3_value
@@ -891,15 +891,17 @@ def main():
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             habitual5_value = habitual5.display()
-            if verbose: st.write(st.session_state.get('prevAnswer'))
+            st.write(f"Current prevAnswer: {st.session_state.get('prevAnswer')}")
             if habitual5_value=="None of the above": 
                 if st.button("Next", key="next_result12"):
                     st.session_state['prevAnswer'] = habitual5_value
+                    st.write(f"prevAnswer saved: {st.session_state['prevAnswer']}")
                     st.session_state['current_page'] = "result12"
                     st.rerun()
             else:
                 if st.button("Next", key="next_habitual6"):
                     st.session_state['prevAnswer'] = habitual5_value
+                    st.write(f"prevAnswer saved: {st.session_state['prevAnswer']}")
                     st.session_state['current_page'] = "habitual6"
                     st.rerun()
             info("habitual5")     
