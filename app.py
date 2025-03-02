@@ -486,6 +486,11 @@ def main():
                     st.error("Invalid date format. Please enter the date in dd/mm/yyyy format.")
             else:
                 st.warning("Please enter the date of birth.")
+            if st.button("Submit", key="submit_sharecode"):
+                st.session_state['button_clicked'] = True
+                st.session_state['current_page'] = "sharecodeResult"#0
+                st.rerun()
+            ChangeButtonColour('st-key-check_eligibility', 'white', 'green')
 
 
         elif st.session_state.get('current_page') == "sharecode":#0:#createPage1
