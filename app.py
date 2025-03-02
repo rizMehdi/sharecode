@@ -40,11 +40,13 @@ def info(question_number):
         elif question_number == "createPage1":  
             st.write('''British, Irish citizens, Commonwealth citizens with right to abode, and diplomats are eligible for housing assistance if they are habitually resident in the UK.
             For further information, check the Homelessness code of guidance for local authorities here: https://www.gov.uk/guidance/homelessness-code-of-guidance-for-local-authorities/chapter-7-eligibility-for-assistance''')
-
+        else:
+            st.write("")
     if question_number == "createPage1":
         with st.expander("Who is a Commonwealth Citizen?"):
             st.write("A Commonwealth citizen is a citizen of a Commonwealth of Nations member state. Check here if your conuntry is a commonwealth member https://thecommonwealth.org/our-member-countries")
-    
+    else:
+        st.write("")
 
 def show(result):
     if result == "result1" or result == "result5" or result == "result11":
