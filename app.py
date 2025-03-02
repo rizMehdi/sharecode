@@ -45,7 +45,7 @@ def show(result):
     elif result == "result2":
         st.write("")
     elif result == "result3":
-        st.markdown(
+        st.info(
             """
             #### Decision  
             **You do not meet the minimum requirements to be eligible for housing assistance.**  
