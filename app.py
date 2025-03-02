@@ -1023,12 +1023,12 @@ def main():
                 st.rerun()
             ChangeButtonColour('st-key-check_eligibility', 'white', 'green')
             
-            st.write("For housing officers or caseworkers", key="verify")
+            st.write("For housing officers or caseworkers", key="verify_sharecode")
             if st.button("Verify sharecode"):
                 st.session_state['button_clicked'] = True
                 st.session_state['current_page'] = "verifySharecode"
                 st.rerun()
-            ChangeButtonColour('st-key-verify', 'white', 'green')
+            ChangeButtonColour('st-key-verify_sharecode', 'white', 'green')
             
 
             
