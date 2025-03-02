@@ -219,7 +219,8 @@ def show(result):
 
 
 def main():
-    st.session_state['prevAnswer']="None"
+    if 'prevAnswer' not in st.session_state:
+        st.session_state['prevAnswer'] = "None"
     st.logo("img/IRESHAwide.png")
     verbose=True
     # verbose=True
