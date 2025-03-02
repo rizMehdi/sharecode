@@ -212,7 +212,8 @@ def show(result):
 
 
 def main():
-    verbose=True
+    # verbose=True
+    verbose=False
     if verbose: st.write(st.session_state.get('current_page', "start"))
     # Create a container to manage visibility of content
     content_container = st.container()
@@ -1032,6 +1033,7 @@ def main():
     else:
         with content_container:
             # st.title("IRESHA Sharecode")
+            st.image("img/partnerLogos.png", width=300)
             st.image("img/IRESHAlogo.png", width=200)
             # st.header("Immigration/Residence Status Eligibility for Social Housing Assistance - Sharecode")
 
@@ -1060,7 +1062,7 @@ def main():
                 st.rerun()
             ChangeButtonColour('st-key-verify_sharecode', 'white', 'green')
             st.markdown("---")
-            st.image("img/partnerLogos.png", width=300)
+            # st.image("img/partnerLogos.png", width=300)
 
             
 
