@@ -47,17 +47,17 @@ def show(result):
     elif result == "result3":
         st.markdown(
             """
-            ## Decision  
+            # Decision  
             **You do not meet the minimum requirements to be eligible for housing assistance.**  
 
             ---  
 
-            ### What this means  
+            # What this means  
             You can only apply for housing assistance if you currently live in the **United Kingdom, Republic of Ireland, Isle of Man,** or **Channel Islands**.  
 
             ---  
 
-            ### What to do next  
+            # What to do next  
             If you are facing **homelessness,** need **urgent housing support,** or further **advice,** you can contact the following organizations:  
 
             - **[Shelter England](https://england.shelter.org.uk/get_help)**
