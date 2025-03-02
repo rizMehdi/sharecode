@@ -519,7 +519,7 @@ def main():
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             st.error(
                 """
-                # Sorry, we are unable to verify the sharecode which you gave us.
+                **Sorry, we are unable to verify the sharecode which you gave us.**
                 
                 Please make sure that the sharecode and the date of birth of the applicant are typed in correctly.
                 """
