@@ -565,16 +565,19 @@ def main():
             if createPage1_value=="British Citizen" or createPage1_value=="Irish Citizen" or createPage1_value=="Diplomat or their family member based in the UK":
                 if st.button("Next", key="next_habitual9"):
                     st.session_state['prevAnswer'] = createPage1_value
+                    print(f"prevAnswer saved: {st.session_state['prevAnswer']}")
                     st.session_state['current_page'] = "habitual9"#1
                     st.rerun()
             elif createPage1_value=="Commonwealth Citizen":  
                 if st.button("Next", key="next_commonwealth"):
                     st.session_state['prevAnswer'] = createPage1_value
+                    print(f"prevAnswer saved: {st.session_state['prevAnswer']}")
                     st.session_state['current_page'] = "commonwealth"#2
                     st.rerun()
             elif createPage1_value=="None of the above": 
                 if st.button("Next", key="next_createPage2"):
                     st.session_state['prevAnswer'] = createPage1_value
+                    print(f"prevAnswer saved: {st.session_state['prevAnswer']}")
                     st.session_state['current_page'] = "createPage2"#3
                     st.rerun()
             info("createPage1")
