@@ -32,8 +32,6 @@ def info(question_number):
             st.write('''British, Irish citizens, Commonwealth citizens with right to abode, and diplomats are eligible for housing assistance if they are habitually resident in the UK.
             For further information, check the Homelessness code of guidance for local authorities here: https://www.gov.uk/guidance/homelessness-code-of-guidance-for-local-authorities/chapter-7-eligibility-for-assistance''')
 
-
-
     if question_number == "createPage1":
         with st.expander("Who is a Commonwealth Citizen?"):
             st.write("A Commonwealth citizen is a citizen of a Commonwealth of Nations member state. Check here if your conuntry is a commonwealth member https://thecommonwealth.org/our-member-countries")
@@ -41,7 +39,6 @@ def info(question_number):
 
 def show(result):
     if result == "result1" or result == "result5" or result == "result11":
-        # st.write("You need to have already resided in UK/RoI/IoM/CI for at least 2 years.  However, there might be some exceptions. A case worker might be able to assess this further.")
         st.warning(
     """
     You have been referred to a case worker.  
@@ -90,10 +87,6 @@ def show(result):
     """
 )
 
-    # elif result == "result4":
-    #     st.write("")
-    # elif result == "result5":
-    #     st.write("")
     elif result == "result6":
         st.info(
     """
@@ -113,8 +106,6 @@ def show(result):
     - **[Citizen Advice Scotland](https://www.citizensadvice.org.uk/scotland/housing/)**
     """
 )
-    # elif result == "result7":
-        # st.write("")
     elif result == "result8":
         st.info(
     """
@@ -155,12 +146,6 @@ def show(result):
     - **[Citizen Advice Scotland](https://www.citizensadvice.org.uk/scotland/housing/)**
     """
 )
-    # elif result == "result10":
-    #     st.write("")
-    # elif result == "result11":
-    #     st.write("")
-    # elif result == "result12":
-    #     st.write("")
     elif result == "result13":
         st.info(
     """
@@ -201,8 +186,6 @@ def show(result):
     - **[Citizen Advice Scotland](https://www.citizensadvice.org.uk/scotland/housing/)**
     """
 )
-    # elif result == "result15":
-    #     st.write("")
     elif result == "result16":
         st.info(
     """
@@ -315,7 +298,10 @@ def main():
             "None of the above applies to me"
         ], horizontal=False, key="rejection1")
 
-        createPage4 = ss.Radio(survey, "Are you a person or family member of a person who is a frontier worker in the UK before 31 December 2020?", options=[
+        createPage4 = ss.Radio(survey, "Are you a person or family member of a person who is", options=[
+            "a worker in the UK",
+            "self-employed in the UK?",
+            "frontier worker in the UK before 31 December 2020",
             "None of the above applies to me"
         ], horizontal=False, key="createPage4")
 
@@ -425,11 +411,10 @@ def main():
         
         # Display questions based on the current page
         if st.session_state.get('current_page') == "createPage1":#0:#createPage1
-            # if st.button("Back", key="back_Q2"):
-                # # st.session_state['current_page'] = 0
-                # st.session_state['button_clicked'] = True
-                # st.rerun()
-            # ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            if st.button("Back", key="back_Q2"):
+                st.session_state['button_clicked'] = False
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             createPage1_value = createPage1.display()
             # if verbose: st.write("createPage1_value", createPage1_value)
             if createPage1_value=="British Citizen" or createPage1_value=="Irish Citizen" or createPage1_value=="Diplomat or their family member based in the UK":
@@ -859,6 +844,24 @@ def main():
                 st.session_state['current_page'] = "habitual2"
                 # st.session_state['current_page'] = "exemption1"tododododooddood
                 # st.session_state['current_page'] = "habitual4"toododoododoodod
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            show("result4")
+            if st.button("Create Sharecode", key="next_sharecode"):
+                st.session_state['current_page'] = "sharecode"
+                st.rerun()
+        
+        elif st.session_state.get('current_page') == "result5":#1:
+            if st.button("Back", key="back_Q2"): 
+                st.session_state['current_page'] = "exemption1" 
+                st.rerun()
+            ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
+            show("result5")
+            if st.button("Create Sharecode", key="next_sharecode"):
+                st.session_state['current_page'] = "sharecode"
+                st.rerun()
+
+                
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             show("result4")
