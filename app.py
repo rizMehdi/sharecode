@@ -265,7 +265,7 @@ def main():
             "None of the above"
         ], horizontal=False, key="commonwealth")
 
-        habitual10 = ss.Radio(survey, "Since how long have you been residing in your current place of residence?", options=[
+        habitual10 = ss.Radio(survey, "Since how long have you been residing here?", options=[
             "Less than 2 years",
             "2 years or more"
         ], horizontal=False, key="habitual10")
@@ -282,7 +282,7 @@ def main():
             "Channel Islands"
         ], horizontal=False, key="habitual1")
 
-        habitual2 = ss.Radio(survey, "Since how long have you been residing in your current place of residence?", options=[
+        habitual2 = ss.Radio(survey, "Since how long have you been residing here?", options=[
             "Less than 2 years",
             "2 years or more"
         ], horizontal=False, key="habitual2")
@@ -299,7 +299,7 @@ def main():
             "None of the above"
         ], horizontal=False, key="habitual3")
 
-        habitual4 = ss.Radio(survey, "Since how long have you been residing in your current place of residence?", options=[
+        habitual4 = ss.Radio(survey, "Since how long have you been residing here?", options=[
             "Less than 5 years",
             "5 years or more"
         ], horizontal=False, key="habitual4")
@@ -350,7 +350,7 @@ def main():
             "None of the above"
         ], horizontal=False, key="habitual5")
 
-        habitual6 = ss.Radio(survey, "Since how long have you been residing in your current place of residence?", options=[
+        habitual6 = ss.Radio(survey, "Since how long have you been residing here?", options=[
             "Less than 2 years",
             "2 years or more"
         ], horizontal=False, key="habitual6")
@@ -706,6 +706,7 @@ def main():
 
 
         elif st.session_state.get('current_page') == "habitual2":#1:
+            st.write("You said you live in" + st.session_state.get('prevAnswer'))
             if st.button("Back", key="back_Q2"):
                 st.session_state['current_page'] = "habitual1"
                 st.rerun()
