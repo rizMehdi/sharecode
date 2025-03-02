@@ -1017,18 +1017,18 @@ def main():
             #     st.rerun()
 
             st.write("For applicants")
-            if st.button("Check eligibility and create sharecode"):
+            if st.button("Check eligibility and create sharecode", key="check_eligibility"):
                 st.session_state['button_clicked'] = True
                 st.session_state['current_page'] = "createPage1"
                 st.rerun()
-            ChangeButtonColour('button_clicked', 'white', 'green')
+            ChangeButtonColour('st-key-check_eligibility', 'white', 'green')
             
-            st.write("For housing officers or caseworkers")
+            st.write("For housing officers or caseworkers", key="verify")
             if st.button("Verify sharecode"):
                 st.session_state['button_clicked'] = True
                 st.session_state['current_page'] = "verifySharecode"
                 st.rerun()
-            ChangeButtonColour('button_clicked', 'white', 'green')
+            ChangeButtonColour('st-key-verify', 'white', 'green')
             
 
             
