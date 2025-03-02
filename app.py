@@ -425,7 +425,6 @@ def main():
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
             st.markdown(
                 """
-                **What you will do:** 
                 You will be asked a series of questions to assess your minimum eligibility for social housing assistance. 
                 - You can click on (>) under each question to see why a question is being asked.  
                 - For certain terms, additional information is available. Look under the questions for additional information.  
