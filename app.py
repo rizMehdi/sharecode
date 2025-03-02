@@ -216,8 +216,8 @@ def show(result):
 def main():
     st.session_state['prevAnswer']="None"
     st.logo("img/IRESHAwide.png")
-    # verbose=False
-    verbose=True
+    verbose=False
+    # verbose=True
     if verbose: st.write(st.session_state.get('current_page', "start"))
     if verbose: st.write(st.session_state.get('prevAnswer', "None"))
     # Create a container to manage visibility of content
