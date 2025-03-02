@@ -489,7 +489,7 @@ def main():
                 st.warning("Please enter the date of birth.")
             if st.button("Submit", key="submit_sharecode"):
                 st.session_state['button_clicked'] = True
-                st.session_state['current_page'] = "sharecodeResult_Yes"#0
+                st.session_state['current_page'] = "sharecodeResult_No"#0
                 st.rerun()
             ChangeButtonColour('st-key-check_eligibility', 'white', 'green')
 
@@ -499,7 +499,7 @@ def main():
                 st.session_state['current_page'] = "verifySharecode"
                 st.rerun()
             ChangeButtonColour('st-key-back_Q2', 'white', 'blue')
-            st.write("Sharecode verification successful")
+            st.write("Sharecode verification successful !")
             st.success(
                 """
                 **Sharecode:** 3UB3C6CLY  
