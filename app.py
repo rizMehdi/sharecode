@@ -1021,12 +1021,14 @@ def main():
                 st.session_state['button_clicked'] = True
                 st.session_state['current_page'] = "createPage1"
                 st.rerun()
+            ChangeButtonColour('button_clicked', 'white', 'green')
             
             st.write("For housing officers or caseworkers")
             if st.button("Verify sharecode"):
                 st.session_state['button_clicked'] = True
                 st.session_state['current_page'] = "verifySharecode"
                 st.rerun()
+            ChangeButtonColour('button_clicked', 'white', 'green')
             
 
             
